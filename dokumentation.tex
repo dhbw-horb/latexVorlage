@@ -1,0 +1,63 @@
+%%**************************************************************
+%% Vorlage fuer Bachelorarbeiten (o.ä.) der DHBW
+%%
+%% Autor: Tobias Dreher
+%% Datum: 06.07.2011
+%%**************************************************************
+
+\newcommand{\pdftitel}{Ausgrabungen von schubkarrengrossen Erdhaeufen}
+\newcommand{\autor}{Hans Wurst}
+\newcommand{\arbeit}{Bachelorarbeit}
+
+\input{header} 
+
+% Ab jetzt können auch Umlaute verwendet werden
+\newcommand{\titel}{Ausgrabungen von schubkarrengroßen Erdhäufen}
+\newcommand{\martrikelnr}{1234567}
+\newcommand{\kurs}{ABC2008DE}
+\newcommand{\datumVonBis}{Juni 2011 - August 2011}
+\newcommand{\datumAbgabe}{August 2011}
+\newcommand{\firma}{Firma GmbH}
+\newcommand{\abgabeort}{Paderborn}
+\newcommand{\abschluss}{Bachelor of Engineering}
+\newcommand{\studiengang}{Studienganges Vorderasiatische Archäologie}
+\newcommand{\dhbw}{Stuttgart Campus Horb}
+\newcommand{\betreuer}{Dipl.-Ing. (FH) Peter Pan}
+\newcommand{\betreuerDHBW}{Dr. Silvana Koch-Mehrin}
+\newcommand{\zeitraum}{12 Wochen}
+
+\begin{document}
+
+	% Deckblatt
+	\begin{spacing}{1}
+		\input{deckblatt}
+	\end{spacing}
+	\newpage
+	
+	\renewcommand{\thepage}{\Roman{page}}
+	\setcounter{page}{1}	
+	
+	% Erklärung
+	\input{erklaerung}
+	\newpage
+
+	% Inhaltsverzeichnis
+	\begin{spacing}{1.1}
+		\setcounter{tocdepth}{1}
+		\tableofcontents
+	\end{spacing}
+	\newpage
+
+	\renewcommand{\thepage}{\arabic{page}}
+	\setcounter{page}{1}
+	
+	% Inhalt
+	\input{content/01kapitel}
+	\input{content/02kapitel}
+	
+	\clearpage
+	\pagenumbering{roman}
+
+	% Der Anhang darf jeder selbst erstellen
+\end{document}
+
