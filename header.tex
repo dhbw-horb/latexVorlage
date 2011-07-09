@@ -10,6 +10,7 @@
 	headsepline,	% Linie nach Kopfzeile.
 	footsepline,	% Linie vor Fusszeile.
 	abstracton,	    % Abstract Überschriften
+	ngerman,		% Translator
 ]{scrreprt}
 
 %Seitengroesse
@@ -30,7 +31,6 @@
 
 % Lokalisierung (neue deutsche Rechtschreibung)
 \usepackage[ngerman]{babel}
-
 
 % Anführungszeichen 
 \usepackage[babel,german=quotes]{csquotes}
@@ -111,7 +111,15 @@
 	extendedchars=true,      % Alle Zeichen vom Latin1 Zeichensatz anzeigen.
 	captionpos=b,            % sets the caption-position to bottom
 	backgroundcolor=\color{ListingBackground} % Hintergrundfarbe des Quellcodes setzen.
-}	
+}
+
+% Glossar
+\usepackage[
+	nonumberlist, %keine Seitenzahlen anzeigen
+	acronym,      %ein Abkürzungsverzeichnis erstellen
+	%section,     %im Inhaltsverzeichnis auf section-Ebene erscheinen
+	toc,          %Einträge im Inhaltsverzeichnis
+]{glossaries}
 
 % Titel, Autor und Datum
 \title{\titel}

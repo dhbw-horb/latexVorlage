@@ -1,7 +1,7 @@
 %%**************************************************************
 %% Vorlage fuer Bachelorarbeiten (o.ä.) der DHBW
 %%
-%% Autor: Tobias Dreher
+%% Autor: Tobias Dreher, Yves Fischer
 %% Datum: 06.07.2011
 %%**************************************************************
 
@@ -25,6 +25,9 @@
 \newcommand{\betreuer}{Dipl.-Ing. (FH) Peter Pan}
 \newcommand{\betreuerDHBW}{Dr. Silvana Koch-Mehrin}
 \newcommand{\zeitraum}{12 Wochen}
+
+\makeglossaries
+\input{glossary}
 
 \begin{document}
 
@@ -59,9 +62,30 @@
 	\input{content/01kapitel}
 	\input{content/02kapitel}
 	
+	% Anhang
 	\clearpage
 	\pagenumbering{roman}
 
-	% Der Anhang darf jeder selbst erstellen
+	% Abbildungsverzeichnis
+	\listoffigures
+	\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+	
+	% Quellcodeverzeichnis
+	\lstlistoflistings
+	\addcontentsline{toc}{chapter}{Listings}
+	
+	% Literaturverzeichnis
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+	\input{literatur}
+	
+	% Abkürzungsverzeichnis
+	% vorher in Konsole folgendes aufrufen: 
+	%	makeglossaries makeglossaries dokumentation.acn && makeglossaries dokumentation.glo
+	\printglossary[type=\acronymtype]
+	
+	% Glossar
+	\printglossary[style=altlist,title=Glossar]
 \end{document}
 
