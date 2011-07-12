@@ -1,6 +1,0 @@
-Zur Kompilierung folgende Befehle ausführen:
-
-$ pdflatex dokumentation.tex
-$ makeglossaries dokumentation.glo
-$ makeglossaries dokumentation.acn
-$ pdflatex dokumentation.tex
