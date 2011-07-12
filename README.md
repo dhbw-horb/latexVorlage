@@ -1,5 +1,5 @@
 ## Vorlage verwenden
-Zur Kompilierung folgende Befehle ausfhren:
+Zur Kompilierung folgende Befehle ausführen:
 
     $ pdflatex dokumentation.tex
     $ makeglossaries dokumentation.glo
