@@ -10,3 +10,7 @@ Zur Kompilierung folgende Befehle ausführen:
     \usepackage{pdfpages}
     % .....
     \includepdf[pages=1]{../latexVorlage/dokumentation.pdf}
+
+## Benutzung mit makefile
+	\make all			Generiert pdf in Outputdirectory und loescht temporaere Files
+	\make clean			loescht output

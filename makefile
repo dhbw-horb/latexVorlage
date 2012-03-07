@@ -24,4 +24,4 @@ report:
 	makeglossaries -q dokumentation.acn
 	pdflatex -interaction=errorstopmode $(DOCUMENT_NAME) > error.txt
 	cp $(DOCUMENT_NAME).pdf $(OUTPUT_DIR)
-	cp $(DOCUMENT_NAME).pdf $(ABGABE_DIR)
+#	cp $(DOCUMENT_NAME).pdf $(ABGABE_DIR)
