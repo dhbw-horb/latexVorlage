@@ -36,10 +36,10 @@
 		\input{deckblatt}
 	\end{spacing}
 	\newpage
-	
+
 	\renewcommand{\thepage}{\Roman{page}}
-	\setcounter{page}{1}	
-	
+	\setcounter{page}{1}
+
 	% Erklärung
 	\input{erklaerung}
 	\newpage
@@ -67,19 +67,29 @@
 	\pagenumbering{roman}
 
 	% Abbildungsverzeichnis
-	\listoffigures
+	\cleardoublepage
+	\phantomsection \label{listoffig}
 	\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
-	
+	\listoffigures
+
+	%Tabellenverzeichnis
+	\cleardoublepage
+	\phantomsection \label{listoftab}
+	\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+	\listoftables
+
 	% Quellcodeverzeichnis
-	\lstlistoflistings
+	\cleardoublepage
+	\phantomsection \label{listoflist}
 	\addcontentsline{toc}{chapter}{Listings}
-	
+	\lstlistoflistings
+
 	% Literaturverzeichnis
-	\clearpage
-	\phantomsection
+	\cleardoublepage
+	\phantomsection \label{listoflit}
 	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
 	\input{literatur}
-	
+
 	% Abkürzungsverzeichnis
 	% vorher in Konsole folgendes aufrufen: 
 	%	makeglossaries makeglossaries dokumentation.acn && makeglossaries dokumentation.glo
