@@ -19,9 +19,9 @@ outputdir:
 
 # Generate PDF output from LaTeX input files.
 report:
-	pdflatex -interaction=errorstopmode $(DOCUMENT_NAME) > error.txt
+	pdflatex -interaction=errorstopmode $(DOCUMENT_NAME) | tee error.txt
 	makeglossaries -q dokumentation.glo
 	makeglossaries -q dokumentation.acn
-	pdflatex -interaction=errorstopmode $(DOCUMENT_NAME) > error.txt
+	pdflatex -interaction=errorstopmode $(DOCUMENT_NAME) | tee error.txt
 	cp $(DOCUMENT_NAME).pdf $(OUTPUT_DIR)
 #	cp $(DOCUMENT_NAME).pdf $(ABGABE_DIR)
