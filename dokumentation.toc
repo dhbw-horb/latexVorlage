@@ -1,7 +1,0 @@
-\select@language {ngerman}
-\contentsline {chapter}{\numberline {1}Das erste Kapitel}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Das zweite Kapitel}{2}{chapter.2}
-\contentsline {chapter}{Abbildungsverzeichnis}{i}{section*.4}
-\contentsline {chapter}{Tabellenverzeichnis}{ii}{section*.6}
-\contentsline {chapter}{Listings}{iii}{section*.8}
-\contentsline {chapter}{Literaturverzeichnis}{iv}{section*.10}

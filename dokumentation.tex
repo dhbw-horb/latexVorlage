@@ -5,14 +5,15 @@
 %% Datum: 06.07.2011
 %%**************************************************************
 
-\newcommand{\pdftitel}{In der Regel haben wir einen zweizeiligen Bachelorthesistitel}
-\newcommand{\autor}{Vorname Nachname}
-\newcommand{\arbeit}{Bachelorarbeit}
-
-\input{ads/header} 
+\input{ads/header}
 
 % Ab jetzt können auch Umlaute verwendet werden
-\newcommand{\titel}{In der Regel haben wir einen zweizeiligen Bachelorthesistitel}
+
+%falls pdftitel = titel der Arbeit
+\newcommand{\titel}{\pdftitel}
+%bei unterschiedlichen Titeln
+%\newcommand{\titel}{In der Regel haben wir einen zweizeiligen
+% Bachelorthesistitel}
 \newcommand{\martrikelnr}{1234567}
 \newcommand{\kurs}{ABC2008DE}
 \newcommand{\datumAbgabe}{August 2011}
@@ -25,7 +26,7 @@
 \newcommand{\betreuer}{Dipl.-Ing. (FH) Peter Pan}
 \newcommand{\gutachter}{Dr. Silvana Koch-Mehrin}
 \newcommand{\zeitraum}{12 Wochen}
-\newcommand{\arbeitsart}{Bachelorarbeit}
+\newcommand{\arbeitsart}{\arbeit}
 
 \makeglossaries
 \input{ads/glossary}
@@ -58,6 +59,8 @@
 	% Inhaltsverzeichnis
 	\begin{spacing}{1.1}
 		\setcounter{tocdepth}{1}
+		%für die Anzeige von Unterkapiteln im Inhaltsverzeichnis
+		%\setcounter{tocdepth}{2}
 		\tableofcontents
 	\end{spacing}
 	\newpage
@@ -95,12 +98,14 @@
 	\cleardoublepage
 	\phantomsection \label{listoflit}
 	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
-	\input{literatur}
+	\bibliographystyle{agsm}
+	\bibliography{ArbeitBib}
 
 	% Abkürzungsverzeichnis
-	% vorher in Konsole folgendes aufrufen: 
-	%	makeglossaries makeglossaries dokumentation.acn && makeglossaries dokumentation.glo
-	\printglossary[type=\acronymtype]
+	\cleardoublepage
+	\phantomsection \label{listofacs}
+	\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+	\input{ads/acronyms}
 	
 	% Glossar
 	\printglossary[style=altlist,title=Glossar]
