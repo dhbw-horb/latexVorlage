@@ -9,7 +9,7 @@
 \newcommand{\autor}{Vorname Nachname}
 \newcommand{\arbeit}{Bachelorarbeit}
 
-\input{header} 
+\input{ads/header} 
 
 % Ab jetzt können auch Umlaute verwendet werden
 \newcommand{\titel}{In der Regel haben wir einen zweizeiligen Bachelorthesistitel}
@@ -28,13 +28,13 @@
 \newcommand{\arbeitsart}{Bachelorarbeit}
 
 \makeglossaries
-\input{glossary}
+\input{ads/glossary}
 
 \begin{document}
 
 	% Deckblatt
 	\begin{spacing}{1}
-		\input{deckblatt}
+		\input{ads/deckblatt}
 	\end{spacing}
 	\newpage
 
@@ -42,15 +42,15 @@
 	\setcounter{page}{1}
 
 	% Sperrvermerk
-	\input{sperrvermerk}
+	\input{ads/sperrvermerk}
 	\newpage
 	
 	% Erklärung
-	\input{erklaerung}
+	\input{ads/erklaerung}
 	\newpage
 
 	% Abstract
-	\input{abstract}
+	\input{ads/abstract}
 	\newpage
 
 	\pagestyle{plain}
@@ -105,4 +105,3 @@
 	% Glossar
 	\printglossary[style=altlist,title=Glossar]
 \end{document}
-
