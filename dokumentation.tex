@@ -3,6 +3,9 @@
 %%
 %% Autor: Tobias Dreher, Yves Fischer
 %% Datum: 06.07.2011
+%%
+%% Autor: Michael Gruben
+%% Datum: 15.05.2013
 %%**************************************************************
 
 \input{ads/header}
@@ -98,7 +101,18 @@
 	\cleardoublepage
 	\phantomsection \label{listoflit}
 	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+	
+	%Harvard
 	\bibliographystyle{agsm}
+	
+	%Durchnummeriert
+	%\bibliographystyle{ams}
+	
+	%Kürzel für Autor und Jahr
+	%\bibliographystyle{amsalpha}
+	%%%%%%%alle Stile in
+	% http://amath.colorado.edu/documentation/LaTeX/reference/faq/bibstyles.pdf
+	
 	\bibliography{ArbeitBib}
 
 	% Abkürzungsverzeichnis
@@ -108,8 +122,5 @@
 	\input{ads/acronyms}
 	
 	% Glossar
-	\cleardoublepage
-	\phantomsection \label{listofgls}
-	\addcontentsline{toc}{chapter}{Glossar}
 	\printglossary[style=altlist,title=Glossar]
 \end{document}
