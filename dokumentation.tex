@@ -3,16 +3,20 @@
 %%
 %% Autor: Tobias Dreher, Yves Fischer
 %% Datum: 06.07.2011
+%%
+%% Autor: Michael Gruben
+%% Datum: 15.05.2013
 %%**************************************************************
 
-\newcommand{\pdftitel}{In der Regel haben wir einen zweizeiligen Bachelorthesistitel}
-\newcommand{\autor}{Vorname Nachname}
-\newcommand{\arbeit}{Bachelorarbeit}
-
-\input{header} 
+\input{ads/header}
 
 % Ab jetzt können auch Umlaute verwendet werden
-\newcommand{\titel}{In der Regel haben wir einen zweizeiligen Bachelorthesistitel}
+
+%falls pdftitel = titel der Arbeit
+\newcommand{\titel}{\pdftitel}
+%bei unterschiedlichen Titeln
+%\newcommand{\titel}{In der Regel haben wir einen zweizeiligen
+% Bachelorthesistitel}
 \newcommand{\martrikelnr}{1234567}
 \newcommand{\kurs}{ABC2008DE}
 \newcommand{\datumAbgabe}{August 2011}
@@ -25,16 +29,16 @@
 \newcommand{\betreuer}{Dipl.-Ing. (FH) Peter Pan}
 \newcommand{\gutachter}{Dr. Silvana Koch-Mehrin}
 \newcommand{\zeitraum}{12 Wochen}
-\newcommand{\arbeitsart}{Bachelorarbeit}
+\newcommand{\arbeitsart}{\arbeit}
 
 \makeglossaries
-\input{glossary}
+\input{ads/glossary}
 
 \begin{document}
 
 	% Deckblatt
 	\begin{spacing}{1}
-		\input{deckblatt}
+		\input{ads/deckblatt}
 	\end{spacing}
 	\newpage
 
@@ -42,15 +46,15 @@
 	\setcounter{page}{1}
 
 	% Sperrvermerk
-	\input{sperrvermerk}
+	\input{ads/sperrvermerk}
 	\newpage
 	
 	% Erklärung
-	\input{erklaerung}
+	\input{ads/erklaerung}
 	\newpage
 
 	% Abstract
-	\input{abstract}
+	\input{ads/abstract}
 	\newpage
 
 	\pagestyle{plain}
@@ -58,6 +62,8 @@
 	% Inhaltsverzeichnis
 	\begin{spacing}{1.1}
 		\setcounter{tocdepth}{1}
+		%für die Anzeige von Unterkapiteln im Inhaltsverzeichnis
+		%\setcounter{tocdepth}{2}
 		\tableofcontents
 	\end{spacing}
 	\newpage
@@ -95,14 +101,26 @@
 	\cleardoublepage
 	\phantomsection \label{listoflit}
 	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
-	\input{literatur}
+	
+	%Harvard
+	\bibliographystyle{agsm}
+	
+	%Durchnummeriert
+	%\bibliographystyle{ams}
+	
+	%Kürzel für Autor und Jahr
+	%\bibliographystyle{amsalpha}
+	%%%%%%%alle Stile in
+	% http://amath.colorado.edu/documentation/LaTeX/reference/faq/bibstyles.pdf
+	
+	\bibliography{ArbeitBib}
 
 	% Abkürzungsverzeichnis
-	% vorher in Konsole folgendes aufrufen: 
-	%	makeglossaries makeglossaries dokumentation.acn && makeglossaries dokumentation.glo
-	\printglossary[type=\acronymtype]
+	\cleardoublepage
+	\phantomsection \label{listofacs}
+	\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+	\input{ads/acronyms}
 	
 	% Glossar
 	\printglossary[style=altlist,title=Glossar]
 \end{document}
-
