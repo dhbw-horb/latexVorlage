@@ -1,16 +1,16 @@
 ## Vorlage verwenden
-Zur Kompilierung folgende Befehle ausführen:
+Zur Kompilierung entweder das Makefile mittels 'make' verwenden, oder folgende Befehle ausführen:
 
-    $ pdflatex dokumentation.tex
-    $ makeglossaries dokumentation.glo
-    $ makeglossaries dokumentation.acn
-    $ pdflatex dokumentation.tex
+    $ pdflatex dokumentation
+    $ bibtex dokumentation
+    $ makeglossaries dokumentation
+    $ pdflatex dokumentation
 
 ## Nur Deckblatt verwenden
     \usepackage{pdfpages}
     % .....
-    \includepdf[pages=1]{../latexVorlage/dokumentation.pdf}
+    \includepdf[pages=1]{../latexVorlage/output/dokumentation.pdf}
 
 ## Benutzung mit makefile
-	\make all			Generiert pdf in Outputdirectory und loescht temporaere Files
-	\make clean			loescht output
+	$ make all			% Generiert pdf in Outputdirectory und loescht temporaere Files
+	$ make clean		% loescht output
