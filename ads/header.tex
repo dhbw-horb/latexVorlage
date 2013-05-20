@@ -58,6 +58,15 @@
 \definecolor{LinkColor}{rgb}{0,0,0.2}
 \definecolor{ListingBackground}{rgb}{0.92,0.92,0.92}
 
+\newcommand{\pdftitel}{In der Regel haben wir einen zweizeiligen Bachelorthesistitel}
+\newcommand{\autor}{Vorname Nachname}
+\newcommand{\arbeit}{Bachelorarbeit}
+
+% Titel, Autor und Datum
+\title{\titel}
+\author{\autor}
+\date{\datum}
+
 % PDF Einstellungen
 \usepackage[%
 	pdftitle={\pdftitel},
@@ -67,11 +76,11 @@
 	pdfpagemode=UseOutlines, % Beim Oeffnen Inhaltsverzeichnis anzeigen
 	pdfdisplaydoctitle=true, % Dokumenttitel statt Dateiname anzeigen.
 	pdflang=de % Sprache des Dokuments.
-]{hyperref}
+]{hyperref} 
 
 % (Farb-)einstellungen für die Links im PDF
 \hypersetup{%
-	colorlinks=false, % Aktivieren von farbigen Links im Dokument
+	colorlinks=true, % Aktivieren von farbigen Links im Dokument
 	linkcolor=LinkColor, % Farbe festlegen
 	citecolor=LinkColor,
 	filecolor=LinkColor,
@@ -79,6 +88,10 @@
 	urlcolor=LinkColor,
 	bookmarksnumbered=true % Überschriftsnummerierung im PDF Inhalt anzeigen.
 }
+
+% Literaturverweise nach Harvard (mit deutschem und)
+\usepackage[dcucite]{harvard}
+\renewcommand{\harvardand}{und}
 
 % Verschiedene Schriftarten
 %\usepackage{goudysans}
@@ -116,15 +129,39 @@
 % Glossar
 \usepackage[
 	nonumberlist, %keine Seitenzahlen anzeigen
-	acronym,      %ein Abkürzungsverzeichnis erstellen
+	%acronym,      %ein Abkürzungsverzeichnis erstellen
 	%section,     %im Inhaltsverzeichnis auf section-Ebene erscheinen
 	toc,          %Einträge im Inhaltsverzeichnis
 ]{glossaries}
 
+%Akronyme
+\usepackage[printonlyused,footnote]{acronym}
+
 % Fussnoten
 \usepackage[perpage, hang, multiple, stable]{footmisc}
 
-% Titel, Autor und Datum
-\title{\titel}
-\author{\autor}
-\date{\datum}
+%Bildpfad
+\graphicspath{{images/}}
+
+%nur ein latex-Durchlauf für die Aktualisierung von Verzeichnissen nötig
+\usepackage{bookmark}
+
+%Gleitumgebungen (Bilder, Tabellen, usw\ldots) lassen sich mit H an genau der
+% definierten Stelle platzieren
+\usepackage{float}
+
+% für die vertikale Platzierung von Text in Tabellen
+\usepackage{array}
+
+% für die Darstellung des Euro-Symbols
+\usepackage[right]{eurosym}
+
+% für textumflossene Grafiken
+\usepackage{wrapfig}
+
+% eine Kommentarumgebung "k" (Handhabe mit \begin{k}<Kommentartext>\end{k},
+% Kommentare werden rot gedruckt). Wird \% vor excludecomment{k} entfernt,
+% werden keine Kommentare mehr gedruckt.
+\usepackage{comment}
+\specialcomment{k}{\begingroup\color{red}}{\endgroup}
+%\excludecomment{k}

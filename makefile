@@ -21,9 +21,7 @@ outputdir:
 report:
 	pdflatex -interaction=errorstopmode $(DOCUMENT_NAME)
 	bibtex dokumentation
-	makeglossaries -q dokumentation.glo
-	makeglossaries -q dokumentation.acn
+	makeglossaries -q dokumentation
 	pdflatex -interaction=errorstopmode $(DOCUMENT_NAME)
 	pdflatex -interaction=errorstopmode $(DOCUMENT_NAME)
 	cp $(DOCUMENT_NAME).pdf $(OUTPUT_DIR)
-#	cp $(DOCUMENT_NAME).pdf $(ABGABE_DIR)
