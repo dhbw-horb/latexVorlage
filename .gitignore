@@ -12,3 +12,5 @@
 *.bbl
 *.blg
 .project
+*.fdb_latexmk
+*.fls
