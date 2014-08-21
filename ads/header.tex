@@ -91,9 +91,16 @@
 	bookmarksnumbered=true % Überschriftsnummerierung im PDF Inhalt anzeigen.
 }
 
-% Literaturverweise nach Harvard (mit deutschem und)
-\usepackage[dcucite]{harvard}
-\renewcommand{\harvardand}{und}
+% Literaturverweise (mit deutschem und)
+\usepackage[
+	    backend=biber,
+	    bibwarn=true,
+	    bibencoding=utf8, % wenn .bib in utf8, sonst ascii
+	    sortlocale=de_DE,
+	    style=numeric	    
+]{biblatex}
+
+\addbibresource{ArbeitBib.bib}
 
 % Verschiedene Schriftarten
 %\usepackage{goudysans}
