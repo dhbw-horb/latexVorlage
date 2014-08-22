@@ -93,12 +93,13 @@
 
 % Literaturverweise (mit deutschem und)
 \usepackage[
-	    backend=biber,      % empfohlen. Falls biber nicht installierbar: bibtex
+	    backend=biber,
 	    bibwarn=true,
-	    bibencoding=utf8, 	% wenn .bib in utf8, sonst ascii
+	    bibencoding=utf8, % wenn .bib in utf8, sonst ascii
 	    sortlocale=de_DE,
-	    style=alphabetic 	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf 
+	    style=authortitle-ticomp 	    
 ]{biblatex}
+
 \addbibresource{ArbeitBib.bib}
 
 % Verschiedene Schriftarten
