@@ -2,7 +2,7 @@
 Zur Kompilierung entweder das Makefile mittels 'make' verwenden, oder folgende Befehle ausführen:
 
     $ pdflatex dokumentation
-    $ bibtex dokumentation
+    $ biber dokumentation
     $ makeglossaries dokumentation
     $ pdflatex dokumentation
 
