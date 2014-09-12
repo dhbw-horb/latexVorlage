@@ -1,3 +1,5 @@
+OUTPUT_DIR = "output"
+
 # Build the LaTeX document
 all: report
 
