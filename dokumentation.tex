@@ -11,26 +11,18 @@
 %% Datum: 22.08.2014
 %%**************************************************************
 
-\input{ads/header}
+% für Einstellungen
+\newcommand{\einstellung}[1]{%
+  \expandafter\newcommand\csname #1\endcsname{}
+  \expandafter\newcommand\csname setze#1\endcsname[1]{\expandafter\renewcommand\csname#1\endcsname{##1}}
+}
 
-%falls pdftitel = titel der Arbeit
-\newcommand{\titel}{\pdftitel}
-%bei unterschiedlichen Titeln
-%\newcommand{\titel}{In der Regel haben wir einen zweizeiligen
-% Bachelorthesistitel}
-\newcommand{\martrikelnr}{1234567}
-\newcommand{\kurs}{ABC2008DE}
-\newcommand{\datumAbgabe}{August 2011}
-\newcommand{\firma}{Firma GmbH}
-\newcommand{\firmenort}{Firmenort}
-\newcommand{\abgabeort}{Abgabeort}
-\newcommand{\abschluss}{Bachelor of Engineering}
-\newcommand{\studiengang}{Studienganges Vorderasiatische Archäologie}
-\newcommand{\dhbw}{Karlsruhe}
-\newcommand{\betreuer}{Dipl.-Ing. (FH) Peter Pan}
-\newcommand{\gutachter}{Dr. Silvana Koch-Mehrin}
-\newcommand{\zeitraum}{12 Wochen}
-\newcommand{\arbeitsart}{\arbeit}
+% verfügbare Einstellungen
+\input{ads/einstellungen_liste}
+% lese Einstellungen
+\input{einstellungen}
+
+\input{ads/header}
 
 \makeglossaries
 \input{ads/glossary}
