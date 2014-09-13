@@ -73,8 +73,15 @@
 	\setcounter{page}{1}
 	
 	% Inhalt
-	\input{content/01kapitel}
-	\input{content/02kapitel}
+  \foreach \i in {01,02,03,\ldots,99} {%
+    \edef\FileName{content/\i kapitel}%
+      \IfFileExists{\FileName}{%
+        \input{\FileName}
+      }
+      {%
+        %file does not exist
+      }
+  }
 	
 	% Anhang
 	\clearpage
