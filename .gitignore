@@ -1,3 +1,5 @@
 *.synctex.gz
 .project
 output/
+dokumentation.pdf
+*.swp
