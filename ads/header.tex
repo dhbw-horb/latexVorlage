@@ -52,9 +52,10 @@
 % Index-Erstellung
 \usepackage{makeidx}
 
-% Lokalisierung (neue deutsche Rechtschreibung)
-\iflang{de}{\usepackage[ngerman]{babel}}
-\iflang{en}{\usepackage[english]{babel}}
+% Lokalisierung
+\usepackage{babel}
+\iflang{de}{\selectlanguage{ngerman}}
+\iflang{en}{\selectlanguage{english}}
 
 % Anführungszeichen 
 \usepackage[autostyle=true,german=quotes]{csquotes}
@@ -127,13 +128,6 @@
 ]{biblatex}
 
 }
-\addbibresource{ArbeitBib.bib}
-
-% Verschiedene Schriftarten
-%\usepackage{goudysans}
-%\usepackage{lmodern}
-%\usepackage{libertine}
-\usepackage{palatino} 
 
 % Hurenkinder und Schusterjungen verhindern
 % http://projekte.dante.de/DanteFAQ/Silbentrennung
@@ -205,3 +199,5 @@
 % für automatische Kapiteldateieinbindung
 \usepackage{pgffor}
 
+% Bibliography einlesen
+\includebibliography{}
