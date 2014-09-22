@@ -17,69 +17,62 @@
   toc=bibliography,
 ]{scrreprt}
 
-% für String-Vergleiche
+% Einstellungen laden
 \usepackage{xstring}
-
-% Zeichencodierung
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-% für Einstellungen
 \newcommand{\einstellung}[1]{%
   \expandafter\newcommand\csname #1\endcsname{}
   \expandafter\newcommand\csname setze#1\endcsname[1]{\expandafter\renewcommand\csname#1\endcsname{##1}}
 }
 \newcommand{\langstr}[1]{\einstellung{lang#1}}
 
-% verfügbare Einstellungen
-\input{ads/einstellungen_liste}
-% lese Einstellungen
-\input{einstellungen}
+\input{ads/einstellungen_liste} % verfügbare Einstellungen
+\input{einstellungen} % lese Einstellungen
 
-% Sprache einlesen
-\input{lang/strings}
-\input{lang/\sprache}
+\input{lang/strings} % verfügbare Strings
+\input{lang/\sprache} % Übersetzung einlesen
 
-%Seitengroesse
-\usepackage{fullpage}
-
-%Zeilenumbruch und mehr
-\usepackage[activate]{microtype}
-
-% Zeilenabstand
-\usepackage[onehalfspacing]{setspace}
-
-% Index-Erstellung
-\usepackage{makeidx}
-
-% Lokalisierung
 \usepackage{babel}
-\iflang{de}{\selectlanguage{ngerman}}
-\iflang{en}{\selectlanguage{english}}
+\iflang{de}{\selectlanguage{ngerman}} % Paket babel benutzt neue deutsche Rechtschreibung
+\iflang{en}{\selectlanguage{english}} % Paket babel benutzt Englisch
 
-% Anführungszeichen 
+
+%%%%%%% Package Includes %%%%%%%
+
+\usepackage{fullpage}
+\usepackage[activate]{microtype} %Zeilenumbruch und mehr
+\usepackage[onehalfspacing]{setspace}
+\usepackage{makeidx}
 \usepackage[autostyle=true,german=quotes]{csquotes}
-
-% Spezielle Tabellenform fuer Deckblatt
 \usepackage{longtable}
-\setlength{\tabcolsep}{10pt} %Abstand zwischen Spalten
-\renewcommand{\arraystretch}{1.5} %Zeilenabstand
-
-% Grafiken
 \usepackage{graphicx}
-
-% Mathematische Textsaetze
-%\usepackage{amsmath}
-%\usepackage{amssymb}
-
-% Pakete um Textteile drehen zu können, oder eine Seite Querformat anzeigen kann.
-%\usepackage{rotating}
-%\usepackage{lscape}
-
-% Farben
 \usepackage{color}
-\definecolor{LinkColor}{rgb}{0,0,0.2}
-\definecolor{ListingBackground}{rgb}{0.92,0.92,0.92}
+\usepackage{float}
+\usepackage{array}
+\usepackage[right]{eurosym}
+\usepackage{wrapfig}
+\usepackage{pgffor} % für automatische Kapiteldateieinbindung
+\usepackage[perpage, hang, multiple, stable]{footmisc}
+\usepackage[printonlyused,footnote]{acronym}
+\usepackage[nonumberlist,toc]{glossaries}
+\usepackage{listings}
+
+% eine Kommentarumgebung "k" (Handhabe mit \begin{k}<Kommentartext>\end{k},
+% Kommentare werden rot gedruckt). Wird \% vor excludecomment{k} entfernt,
+% werden keine Kommentare mehr gedruckt.
+\usepackage{comment}
+\specialcomment{k}{\begingroup\color{red}}{\endgroup}
+%\excludecomment{k}
+
+
+%%%%%% Configuration %%%%%
+
+%% Anwenden der Einstellungen
+
+\usepackage{\schriftart}
+\ladefarben{}
 
 % Titel, Autor und Datum
 \title{\titel}
@@ -94,8 +87,8 @@
 	pdfcreator={pdflatex, LaTeX with KOMA-Script},
 	pdfpagemode=UseOutlines, % Beim Oeffnen Inhaltsverzeichnis anzeigen
 	pdfdisplaydoctitle=true, % Dokumenttitel statt Dateiname anzeigen.
-	pdflang=de % Sprache des Dokuments.
-]{hyperref} 
+  pdflang={\sprache}, % Sprache des Dokuments.
+]{hyperref}
 
 % (Farb-)einstellungen für die Links im PDF
 \hypersetup{%
@@ -107,8 +100,10 @@
 	urlcolor=LinkColor,
 	bookmarksnumbered=true % Überschriftsnummerierung im PDF Inhalt anzeigen.
 }
+% Workaround um Fehler in Hyperref, muss hier stehen bleiben
+\usepackage{bookmark} %nur ein latex-Durchlauf für die Aktualisierung von Verzeichnissen nötig
 
-% Literaturverweise (mit deutschem und)
+% Literaturverweise (sowohl deutsch als auch englisch)
 \iflang{de}{%
 \usepackage[
 	    backend=biber,      % empfohlen. Falls biber nicht installierbar: bibtex
@@ -126,8 +121,11 @@
 	    sortlocale=en_US,
 	    style=alphabetic 	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf 
 ]{biblatex}
-
 }
+
+\ladeliteratur{}
+
+%%%%%% Additional settings %%%%%%
 
 % Hurenkinder und Schusterjungen verhindern
 % http://projekte.dante.de/DanteFAQ/Silbentrennung
@@ -135,69 +133,12 @@
 \widowpenalty=10000
 \displaywidowpenalty=10000
 
-% Quellcode
-\usepackage{listings}
-\lstloadlanguages{Python}
-\lstset{%
-	language=Python,		 	 % Sprache des Quellcodes
-	%numbers=left,           % Zelennummern links
-	stepnumber=1,            % Jede Zeile nummerieren.
-	numbersep=5pt,           % 5pt Abstand zum Quellcode
-	numberstyle=\tiny,       % Zeichengrösse 'tiny' für die Nummern.
-	breaklines=true,         % Zeilen umbrechen wenn notwendig.
-	breakautoindent=true,    % Nach dem Zeilenumbruch Zeile einrücken.
-	postbreak=\space,        % Bei Leerzeichen umbrechen.
-	tabsize=2,               % Tabulatorgrösse 2
-	basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
-	showspaces=false,        % Leerzeichen nicht anzeigen.
-	showstringspaces=false,  % Leerzeichen auch in Strings ('') nicht anzeigen.
-	extendedchars=true,      % Alle Zeichen vom Latin1 Zeichensatz anzeigen.
-	captionpos=b,            % sets the caption-position to bottom
-	backgroundcolor=\color{ListingBackground} % Hintergrundfarbe des Quellcodes setzen.
-}
-
-% Glossar
-\usepackage[
-	nonumberlist, %keine Seitenzahlen anzeigen
-	%acronym,      %ein Abkürzungsverzeichnis erstellen
-	%section,     %im Inhaltsverzeichnis auf section-Ebene erscheinen
-	toc,          %Einträge im Inhaltsverzeichnis
-]{glossaries}
-
-%Akronyme
-\usepackage[printonlyused,footnote]{acronym}
-
-% Fussnoten
-\usepackage[perpage, hang, multiple, stable]{footmisc}
-
-%Bildpfad
+% Bildpfad
 \graphicspath{{images/}}
 
-%nur ein latex-Durchlauf für die Aktualisierung von Verzeichnissen nötig
-\usepackage{bookmark}
+% Einige häufig verwendete Sprachen
+\lstloadlanguages{PHP,Python,Java,C,C++}
+\listingsettings{}
 
-%Gleitumgebungen (Bilder, Tabellen, usw\ldots) lassen sich mit H an genau der
-% definierten Stelle platzieren
-\usepackage{float}
-
-% für die vertikale Platzierung von Text in Tabellen
-\usepackage{array}
-
-% für die Darstellung des Euro-Symbols
-\usepackage[right]{eurosym}
-
-% für textumflossene Grafiken
-\usepackage{wrapfig}
-
-% eine Kommentarumgebung "k" (Handhabe mit \begin{k}<Kommentartext>\end{k},
-% Kommentare werden rot gedruckt). Wird \% vor excludecomment{k} entfernt,
-% werden keine Kommentare mehr gedruckt.
-\usepackage{comment}
-\specialcomment{k}{\begingroup\color{red}}{\endgroup}
-%\excludecomment{k}
-
-% für automatische Kapiteldateieinbindung
-\usepackage{pgffor}
-
-% Bibliography einlesen
-\includebibliography{}
+\setlength{\tabcolsep}{\spaltenabstand}
+\renewcommand{\arraystretch}{\zeilenabstand}
