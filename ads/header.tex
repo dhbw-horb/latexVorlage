@@ -11,7 +11,7 @@
   parskip=half,	% Halbe Zeile Abstand zwischen Absätzen.
   headsepline,	% Linie nach Kopfzeile.
   footsepline,	% Linie vor Fusszeile.
-  abstracton,	    % Abstract Überschriften
+  abstracton,			% Abstract Überschriften
   ngerman,		% Translator
   listof=totoc,
   toc=bibliography,
@@ -106,20 +106,20 @@
 % Literaturverweise (sowohl deutsch als auch englisch)
 \iflang{de}{%
 \usepackage[
-	    backend=biber,      % empfohlen. Falls biber nicht installierbar: bibtex
-	    bibwarn=true,
-	    bibencoding=utf8, 	% wenn .bib in utf8, sonst ascii
-	    sortlocale=de_DE,
-	    style=alphabetic 	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf 
+			backend=biber,      % empfohlen. Falls biber nicht installierbar: bibtex
+			bibwarn=true,
+			bibencoding=utf8,		% wenn .bib in utf8, sonst ascii
+			sortlocale=de_DE,
+			style=alphabetic	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf
 ]{biblatex}
 }
 \iflang{en}{%
 \usepackage[
-	    backend=biber,      % empfohlen. Falls biber nicht installierbar: bibtex
-	    bibwarn=true,
-	    bibencoding=utf8, 	% wenn .bib in utf8, sonst ascii
-	    sortlocale=en_US,
-	    style=alphabetic 	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf 
+			backend=biber,		 % empfohlen. Falls biber nicht installierbar: bibtex
+			bibwarn=true,
+			bibencoding=utf8,	% wenn .bib in utf8, sonst ascii
+			sortlocale=en_US,
+			style=alphabetic	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf
 ]{biblatex}
 }
 
