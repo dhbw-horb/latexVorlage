@@ -1,3 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Einstellungen
+%
+% Hier können alle relevanten Einstellungen für diese Arbeit gesetzt werden.
+% Dazu gehören Angaben u.a. über den Autor sowie Formatierungen.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sprache %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Aktuell sind Deutsch und Englisch unterstützt.
+%% Es werden nicht nur alle vom Dokument erzeugten Texte in
+%% der entsprechenden Sprache angezeigt, sondern auch weitere
+%% Aspekte angepasst, wie z.B. die Anführungszeichen und
+%% Datumsformate.
+\setzesprache{de} % oder en
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Angaben  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Die meisten der folgenden Daten werden auf dem
+%% Deckblatt angezeigt, einige auch im weiteren Verlauf
+%% des Dokuments.
 \setzemartrikelnr{1234510}
 \setzekurs{ABC2008DE}
 \setzetitel{In der Regel haben wir einen zweizeiligen Bachelorthesistitel}
@@ -13,4 +36,62 @@
 \setzezeitraum{12 Wochen}
 \setzearbeit{Bachelorarbeit}
 \setzeautor{Vorname Nachname}
-\setzesprache{de} % oder en
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bei Fehlern während der Verarbeitung bitte in ads/header.tex bei der
+%% Einbindung des Pakets biblatex (ungefähr ab Zeile 110,
+%% einmal für jede Sprache), biber in bibtex ändern.
+\newcommand{\ladeliteratur}{%
+\addbibresource{ArbeitBib.bib}
+%\addbibresource{weitereDatei.bib}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Verschiedene Schriftarten
+\setzeschriftart{palatino} % oder goudysans, lmodern, libertine
+%% Paket um Textteile drehen zu können
+%\usepackage{rotating}
+%% Paket um Seite im Querformat anzuzeigen 
+%\usepackage{lscape}
+%% Spaltenabstand
+\setzespaltenabstand{10pt}
+%%Zeilenabstand
+\setzezeilenabstand{1.5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Verschiedenes  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Farben
+\newcommand{\ladefarben}{%
+  \definecolor{LinkColor}{rgb}{0,0,0.2}
+  \definecolor{ListingBackground}{rgb}{0.92,0.92,0.92}
+}
+%% Mathematikpakete benutzen (Pakete aktivieren)
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%% Programmiersprachen Highlighting (Listings)
+\newcommand{\listingsettings}{%
+  \lstset{%
+    language=Java,		 	     % Standardsprache des Quellcodes
+    %numbers=left,           % Zeilennummern links
+    stepnumber=1,            % Jede Zeile nummerieren.
+    numbersep=5pt,           % 5pt Abstand zum Quellcode
+    numberstyle=\tiny,       % Zeichengrösse 'tiny' für die Nummern.
+    breaklines=true,         % Zeilen umbrechen wenn notwendig.
+    breakautoindent=true,    % Nach dem Zeilenumbruch Zeile einrücken.
+    postbreak=\space,        % Bei Leerzeichen umbrechen.
+    tabsize=2,               % Tabulatorgrösse 2
+    basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
+    showspaces=false,        % Leerzeichen nicht anzeigen.
+    showstringspaces=false,  % Leerzeichen auch in Strings ('') nicht anzeigen.
+    extendedchars=true,      % Alle Zeichen vom Latin1 Zeichensatz anzeigen.
+    captionpos=b,            % sets the caption-position to bottom
+    backgroundcolor=\color{ListingBackground} % Hintergrundfarbe des Quellcodes setzen.
+  }
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Eigenes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hier können Ergänzungen zur Präambel vorgenommen werden (eigene Pakete, Einstellungen)
+
