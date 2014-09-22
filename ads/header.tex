@@ -5,15 +5,40 @@
 %
 
 \documentclass[%
-	pdftex,
-	oneside,		% Einseitiger Druck.
-	12pt,			% Schriftgroesse
-	parskip=half,	% Halbe Zeile Abstand zwischen Absätzen.
-	headsepline,	% Linie nach Kopfzeile.
-	footsepline,	% Linie vor Fusszeile.
-	abstracton,	    % Abstract Überschriften
-	ngerman,		% Translator
+  pdftex,
+  oneside,		% Einseitiger Druck.
+  12pt,			% Schriftgroesse
+  parskip=half,	% Halbe Zeile Abstand zwischen Absätzen.
+  headsepline,	% Linie nach Kopfzeile.
+  footsepline,	% Linie vor Fusszeile.
+  abstracton,	    % Abstract Überschriften
+  ngerman,		% Translator
+  listof=totoc,
+  toc=bibliography,
 ]{scrreprt}
+
+% für String-Vergleiche
+\usepackage{xstring}
+
+% Zeichencodierung
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% für Einstellungen
+\newcommand{\einstellung}[1]{%
+  \expandafter\newcommand\csname #1\endcsname{}
+  \expandafter\newcommand\csname setze#1\endcsname[1]{\expandafter\renewcommand\csname#1\endcsname{##1}}
+}
+\newcommand{\langstr}[1]{\einstellung{lang#1}}
+
+% verfügbare Einstellungen
+\input{ads/einstellungen_liste}
+% lese Einstellungen
+\input{einstellungen}
+
+% Sprache einlesen
+\input{lang/strings}
+\input{lang/\sprache}
 
 %Seitengroesse
 \usepackage{fullpage}
@@ -21,23 +46,19 @@
 %Zeilenumbruch und mehr
 \usepackage[activate]{microtype}
 
-% Zeichencodierung
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
 % Zeilenabstand
 \usepackage[onehalfspacing]{setspace}
 
 % Index-Erstellung
 \usepackage{makeidx}
 
-% Lokalisierung (neue deutsche Rechtschreibung)
-\usepackage[ngerman]{babel}
+% Lokalisierung
+\usepackage{babel}
+\iflang{de}{\selectlanguage{ngerman}}
+\iflang{en}{\selectlanguage{english}}
 
 % Anführungszeichen 
-\usepackage[babel,german=quotes]{csquotes}
-%\usepackage[style=swiss]{csquotes}
-
+\usepackage[autostyle=true,german=quotes]{csquotes}
 
 % Spezielle Tabellenform fuer Deckblatt
 \usepackage{longtable}
@@ -88,6 +109,7 @@
 }
 
 % Literaturverweise (mit deutschem und)
+\iflang{de}{%
 \usepackage[
 	    backend=biber,      % empfohlen. Falls biber nicht installierbar: bibtex
 	    bibwarn=true,
@@ -95,13 +117,17 @@
 	    sortlocale=de_DE,
 	    style=alphabetic 	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf 
 ]{biblatex}
-\addbibresource{ArbeitBib.bib}
+}
+\iflang{en}{%
+\usepackage[
+	    backend=biber,      % empfohlen. Falls biber nicht installierbar: bibtex
+	    bibwarn=true,
+	    bibencoding=utf8, 	% wenn .bib in utf8, sonst ascii
+	    sortlocale=en_US,
+	    style=alphabetic 	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf 
+]{biblatex}
 
-% Verschiedene Schriftarten
-%\usepackage{goudysans}
-%\usepackage{lmodern}
-%\usepackage{libertine}
-\usepackage{palatino} 
+}
 
 % Hurenkinder und Schusterjungen verhindern
 % http://projekte.dante.de/DanteFAQ/Silbentrennung
@@ -172,3 +198,6 @@
 
 % für automatische Kapiteldateieinbindung
 \usepackage{pgffor}
+
+% Bibliography einlesen
+\includebibliography{}

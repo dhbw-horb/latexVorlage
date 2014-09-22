@@ -11,17 +11,6 @@
 %% Datum: 22.08.2014
 %%**************************************************************
 
-% für Einstellungen
-\newcommand{\einstellung}[1]{%
-  \expandafter\newcommand\csname #1\endcsname{}
-  \expandafter\newcommand\csname setze#1\endcsname[1]{\expandafter\renewcommand\csname#1\endcsname{##1}}
-}
-
-% verfügbare Einstellungen
-\input{ads/einstellungen_liste}
-% lese Einstellungen
-\input{einstellungen}
-
 \input{ads/header}
 
 \makeglossaries
@@ -65,7 +54,7 @@
 	\setcounter{page}{1}
 	
 	% Inhalt
-  \foreach \i in {01,02,03,\ldots,99} {%
+  \foreach \i in {01,02,03,...,99} {%
     \edef\FileName{content/\i kapitel}%
       \IfFileExists{\FileName}{%
         \input{\FileName}
@@ -81,35 +70,26 @@
 
 	% Abbildungsverzeichnis
 	\cleardoublepage
-	\phantomsection \label{listoffig}
-	\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
 	\listoffigures
 
 	%Tabellenverzeichnis
 	\cleardoublepage
-	\phantomsection \label{listoftab}
-	\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
 	\listoftables
 
 	% Quellcodeverzeichnis
 	\cleardoublepage
-	\phantomsection \label{listoflist}
-	\addcontentsline{toc}{chapter}{Listings}
 	\lstlistoflistings
 
 	% Literaturverzeichnis
 	\cleardoublepage
-	\phantomsection \label{listoflit}
-	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
-	
 	\printbibliography
 
 	% Abkürzungsverzeichnis
 	\cleardoublepage
 	\phantomsection \label{listofacs}
-	\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+	\addcontentsline{toc}{chapter}{\langabkverz}
 	\input{ads/acronyms}
 	
 	% Glossar
-	\printglossary[style=altlist,title=Glossar]
+	\printglossary[style=altlist,title=\langglossar]
 \end{document}
