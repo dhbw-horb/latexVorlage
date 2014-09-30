@@ -30,7 +30,7 @@
 	% Sperrvermerk
 	\input{ads/sperrvermerk}
 	\newpage
-	
+
 	% Erklärung
 	\input{ads/erklaerung}
 	\newpage
@@ -52,18 +52,18 @@
 
 	\renewcommand{\thepage}{\arabic{page}}
 	\setcounter{page}{1}
-	
+
 	% Inhalt
-  \foreach \i in {01,02,03,...,99} {%
-    \edef\FileName{content/\i kapitel}%
-      \IfFileExists{\FileName}{%
-        \input{\FileName}
-      }
-      {%
-        %file does not exist
-      }
-  }
-	
+	\foreach \i in {01,02,03,...,99} {%
+		\edef\FileName{content/\i kapitel}%
+			\IfFileExists{\FileName}{%
+				\input{\FileName}
+			}
+			{%
+				%file does not exist
+			}
+	}
+
 	% Anhang
 	\clearpage
 	\pagenumbering{roman}
@@ -89,7 +89,7 @@
 	\phantomsection \label{listofacs}
 	\addcontentsline{toc}{chapter}{\langabkverz}
 	\input{ads/acronyms}
-	
+
 	% Glossar
 	\printglossary[style=altlist,title=\langglossar]
 \end{document}
