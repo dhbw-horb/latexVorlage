@@ -6,11 +6,16 @@ Entweder über latexmk:
 * Bauen: `latexmk`
 * Aufräumen: `latexmk -c`
 
-Oder über das makefile (verwendet latexmk):
-* Bauen: `make`
+Oder über das makefile:
+* Bauen: `make` oder `make all`
 * Aufräumen:
   * `make clean` (entfernt output/, dokumentation.pdf und dokumentation.synctex.gz)
-  * `make cleanup` (gleich wie latexmk -c)
+  * `make cleanup` (entfernt nur temporäre Build-Dateien)
+* diese Befehle gibt es auch noch in einer Version mit latexmk:
+  * `make all-latexmk-`
+  * `make clean-latexmk`
+  * `make cleanup-latexmk`
+
 
 # Ordnerstruktur
 * ads/ - enthält die notwendigen Seiten, z.B. Abstract, Deckblatt etc., sowie einige Interna
