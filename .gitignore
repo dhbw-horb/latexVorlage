@@ -3,3 +3,4 @@
 output/
 dokumentation.pdf
 *.swp
+*.backup
