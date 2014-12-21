@@ -28,7 +28,7 @@ report:
 	makeglossaries -d $(OUTPUT_DIR) -q $(DOCUMENT_NAME)
 	pdflatex -interaction=errorstopmode -output-directory=$(OUTPUT_DIR) $(DOCUMENT_NAME)
 	pdflatex -interaction=errorstopmode -output-directory=$(OUTPUT_DIR) $(DOCUMENT_NAME)
-	mv $(OUTPUT_DIR)/$(DOCUMENT_NAME).pdf $(DOCUMENT_NAME).pdf 
+	cp $(OUTPUT_DIR)/$(DOCUMENT_NAME).pdf $(DOCUMENT_NAME).pdf 
 
 
 ##latexmk
