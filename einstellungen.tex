@@ -43,7 +43,7 @@
 %% Einbindung des Pakets biblatex (ungefähr ab Zeile 110,
 %% einmal für jede Sprache), biber in bibtex ändern.
 \newcommand{\ladeliteratur}{%
-\addbibresource{ArbeitBib.bib}
+\addbibresource{bibliographie.bib}
 %\addbibresource{weitereDatei.bib}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,20 +73,20 @@
 %% Programmiersprachen Highlighting (Listings)
 \newcommand{\listingsettings}{%
   \lstset{%
-    language=Java,					 % Standardsprache des Quellcodes
-    %numbers=left,           % Zeilennummern links
-    stepnumber=1,            % Jede Zeile nummerieren.
-    numbersep=5pt,           % 5pt Abstand zum Quellcode
-    numberstyle=\tiny,       % Zeichengrösse 'tiny' für die Nummern.
-    breaklines=true,         % Zeilen umbrechen wenn notwendig.
-    breakautoindent=true,    % Nach dem Zeilenumbruch Zeile einrücken.
-    postbreak=\space,        % Bei Leerzeichen umbrechen.
-    tabsize=2,               % Tabulatorgrösse 2
+    language=Java,			% Standardsprache des Quellcodes
+    %numbers=left,			% Zeilennummern links
+    stepnumber=1,			% Jede Zeile nummerieren.
+    numbersep=5pt,			% 5pt Abstand zum Quellcode
+    numberstyle=\tiny,		% Zeichengrösse 'tiny' für die Nummern.
+    breaklines=true,		% Zeilen umbrechen wenn notwendig.
+    breakautoindent=true,	% Nach dem Zeilenumbruch Zeile einrücken.
+    postbreak=\space,		% Bei Leerzeichen umbrechen.
+    tabsize=2,				% Tabulatorgrösse 2
     basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
-    showspaces=false,        % Leerzeichen nicht anzeigen.
-    showstringspaces=false,  % Leerzeichen auch in Strings ('') nicht anzeigen.
-    extendedchars=true,      % Alle Zeichen vom Latin1 Zeichensatz anzeigen.
-    captionpos=b,            % sets the caption-position to bottom
+    showspaces=false,		% Leerzeichen nicht anzeigen.
+    showstringspaces=false,	% Leerzeichen auch in Strings ('') nicht anzeigen.
+    extendedchars=true,		% Alle Zeichen vom Latin1 Zeichensatz anzeigen.
+    captionpos=b,			% sets the caption-position to bottom
     backgroundcolor=\color{ListingBackground} % Hintergrundfarbe des Quellcodes setzen.
   }
 }
