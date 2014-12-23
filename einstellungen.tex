@@ -62,33 +62,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Verschiedenes  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Farben
+%% Farben (Angabe in HTML-Notation mit großen Buchstaben)
 \newcommand{\ladefarben}{%
-  \definecolor{LinkColor}{rgb}{0,0,0.2}
-  \definecolor{ListingBackground}{rgb}{0.92,0.92,0.92}
+	\definecolor{LinkColor}{HTML}{00007A}
+	\definecolor{ListingBackground}{HTML}{FCF7DE}
 }
 %% Mathematikpakete benutzen (Pakete aktivieren)
 %\usepackage{amsmath}
 %\usepackage{amssymb}
+
 %% Programmiersprachen Highlighting (Listings)
 \newcommand{\listingsettings}{%
-  \lstset{%
-    language=Java,			% Standardsprache des Quellcodes
-    %numbers=left,			% Zeilennummern links
-    stepnumber=1,			% Jede Zeile nummerieren.
-    numbersep=5pt,			% 5pt Abstand zum Quellcode
-    numberstyle=\tiny,		% Zeichengrösse 'tiny' für die Nummern.
-    breaklines=true,		% Zeilen umbrechen wenn notwendig.
-    breakautoindent=true,	% Nach dem Zeilenumbruch Zeile einrücken.
-    postbreak=\space,		% Bei Leerzeichen umbrechen.
-    tabsize=2,				% Tabulatorgrösse 2
-    basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
-    showspaces=false,		% Leerzeichen nicht anzeigen.
-    showstringspaces=false,	% Leerzeichen auch in Strings ('') nicht anzeigen.
-    extendedchars=true,		% Alle Zeichen vom Latin1 Zeichensatz anzeigen.
-    captionpos=b,			% sets the caption-position to bottom
-    backgroundcolor=\color{ListingBackground} % Hintergrundfarbe des Quellcodes setzen.
-  }
+	\lstset{%
+		language=Java,			% Standardsprache des Quellcodes
+		%numbers=left,			% Zeilennummern links
+		stepnumber=1,			% Jede Zeile nummerieren.
+		numbersep=5pt,			% 5pt Abstand zum Quellcode
+		numberstyle=\tiny,		% Zeichengrösse 'tiny' für die Nummern.
+		breaklines=true,		% Zeilen umbrechen wenn notwendig.
+		breakautoindent=true,	% Nach dem Zeilenumbruch Zeile einrücken.
+		postbreak=\space,		% Bei Leerzeichen umbrechen.
+		tabsize=2,				% Tabulatorgrösse 2
+		basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
+		showspaces=false,		% Leerzeichen nicht anzeigen.
+		showstringspaces=false,	% Leerzeichen auch in Strings ('') nicht anzeigen.
+		extendedchars=true,		% Alle Zeichen vom Latin1 Zeichensatz anzeigen.
+		captionpos=b,			% sets the caption-position to bottom
+		backgroundcolor=\color{ListingBackground}, % Hintergrundfarbe des Quellcodes setzen.
+		xleftmargin=0pt,		% Rand links
+		xrightmargin=0pt,		% Rand rechts
+		frame=single,			% Rahmen an
+		frameround=ffff,
+		rulecolor=\color{darkgray},	% Rahmenfarbe
+		fillcolor=\color{ListingBackground}
+	}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

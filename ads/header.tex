@@ -5,15 +5,15 @@
 %
 
 \documentclass[%
-  pdftex,
-  oneside,		% Einseitiger Druck.
-  12pt,			% Schriftgroesse
-  parskip=half,	        % Halbe Zeile Abstand zwischen Absätzen.
-  headsepline,	        % Linie nach Kopfzeile.
-  footsepline,	        % Linie vor Fusszeile.
-  abstracton,		% Abstract Überschriften
-  listof=totoc,
-  toc=bibliography,
+	pdftex,
+	oneside,			% Einseitiger Druck.
+	12pt,				% Schriftgroesse
+	parskip=half,		% Halbe Zeile Abstand zwischen Absätzen.
+	headsepline,		% Linie nach Kopfzeile.
+	footsepline,		% Linie vor Fusszeile.
+	abstracton,			% Abstract Überschriften
+	listof=totoc,
+	toc=bibliography,
 ]{scrreprt}
 
 % Einstellungen laden
@@ -47,7 +47,7 @@
 \usepackage[autostyle=true,german=quotes]{csquotes}
 \usepackage{longtable}
 \usepackage{graphicx}
-\usepackage{color}
+\usepackage{xcolor} 	%xcolor für HTML-Notation
 \usepackage{float}
 \usepackage{array}
 \usepackage[right]{eurosym}
@@ -84,28 +84,32 @@
 	pdfauthor={\autor},
 	pdfsubject={\arbeit},
 	pdfcreator={pdflatex, LaTeX with KOMA-Script},
-	pdfpagemode=UseOutlines, % Beim Oeffnen Inhaltsverzeichnis anzeigen
-	pdfdisplaydoctitle=true, % Dokumenttitel statt Dateiname anzeigen.
-	pdflang={\sprache}, % Sprache des Dokuments.
+	pdfpagemode=UseOutlines, 		% Beim Oeffnen Inhaltsverzeichnis anzeigen
+	pdfdisplaydoctitle=true, 		% Dokumenttitel statt Dateiname anzeigen.
+	pdflang={\sprache}, 			% Sprache des Dokuments.
 ]{hyperref}
 
 % (Farb-)einstellungen für die Links im PDF
 \hypersetup{%
-	colorlinks=true, % Aktivieren von farbigen Links im Dokument
-	linkcolor=LinkColor, % Farbe festlegen
+	colorlinks=true, 		% Aktivieren von farbigen Links im Dokument
+	linkcolor=LinkColor, 	% Farbe festlegen
 	citecolor=LinkColor,
 	filecolor=LinkColor,
 	menucolor=LinkColor,
 	urlcolor=LinkColor,
-	bookmarksnumbered=true % Überschriftsnummerierung im PDF Inhalt anzeigen.
+	linktocpage=true, 		% Nicht der Text sondern die Seitenzahlen in Verzeichnissen klickbar
+	bookmarksnumbered=true 	% Überschriftsnummerierung im PDF Inhalt anzeigen.
 }
 % Workaround um Fehler in Hyperref, muss hier stehen bleiben
 \usepackage{bookmark} %nur ein latex-Durchlauf für die Aktualisierung von Verzeichnissen nötig
 
+% Schriftart in Captions etwas kleiner
+\addtokomafont{caption}{\small}
+
 % Literaturverweise (sowohl deutsch als auch englisch)
 \iflang{de}{%
 \usepackage[
-	backend=biber,      % empfohlen. Falls biber Probleme macht: bibtex
+	backend=biber,		% empfohlen. Falls biber Probleme macht: bibtex
 	bibwarn=true,
 	bibencoding=utf8,	% wenn .bib in utf8, sonst ascii
 	sortlocale=de_DE,
@@ -136,7 +140,7 @@
 \graphicspath{{images/}}
 
 % Einige häufig verwendete Sprachen
-\lstloadlanguages{PHP,Python,Java,C,C++}
+\lstloadlanguages{PHP,Python,Java,C,C++,bash}
 \listingsettings{}
 
 \setlength{\tabcolsep}{\spaltenabstand}
