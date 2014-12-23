@@ -13,25 +13,6 @@
 
 \input{ads/header}
 
-%falls pdftitel = titel der Arbeit
-\newcommand{\titel}{\pdftitel}
-%bei unterschiedlichen Titeln
-%\newcommand{\titel}{In der Regel haben wir einen zweizeiligen
-% Bachelorthesistitel}
-\newcommand{\martrikelnr}{1234567}
-\newcommand{\kurs}{ABC2008DE}
-\newcommand{\datumAbgabe}{August 2011}
-\newcommand{\firma}{Firma GmbH}
-\newcommand{\firmenort}{Firmenort}
-\newcommand{\abgabeort}{Abgabeort}
-\newcommand{\abschluss}{Bachelor of Engineering}
-\newcommand{\studiengang}{Studienganges Vorderasiatische Archäologie}
-\newcommand{\dhbw}{Karlsruhe}
-\newcommand{\betreuer}{Dipl.-Ing. (FH) Peter Pan}
-\newcommand{\gutachter}{Dr. Silvana Koch-Mehrin}
-\newcommand{\zeitraum}{12 Wochen}
-\newcommand{\arbeitsart}{\arbeit}
-
 \makeglossaries
 \input{ads/glossary}
 
@@ -49,7 +30,7 @@
 	% Sperrvermerk
 	\input{ads/sperrvermerk}
 	\newpage
-	
+
 	% Erklärung
 	\input{ads/erklaerung}
 	\newpage
@@ -71,46 +52,44 @@
 
 	\renewcommand{\thepage}{\arabic{page}}
 	\setcounter{page}{1}
-	
+
 	% Inhalt
-	\input{content/01kapitel}
-	\input{content/02kapitel}
-	
+	\foreach \i in {01,02,03,...,99} {%
+		\edef\FileName{content/\i kapitel}%
+			\IfFileExists{\FileName}{%
+				\input{\FileName}
+			}
+			{%
+				%file does not exist
+			}
+	}
+
 	% Anhang
 	\clearpage
 	\pagenumbering{roman}
 
 	% Abbildungsverzeichnis
 	\cleardoublepage
-	\phantomsection \label{listoffig}
-	\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
 	\listoffigures
 
 	%Tabellenverzeichnis
 	\cleardoublepage
-	\phantomsection \label{listoftab}
-	\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
 	\listoftables
 
 	% Quellcodeverzeichnis
 	\cleardoublepage
-	\phantomsection \label{listoflist}
-	\addcontentsline{toc}{chapter}{Listings}
 	\lstlistoflistings
 
 	% Literaturverzeichnis
 	\cleardoublepage
-	\phantomsection \label{listoflit}
-	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
-	
 	\printbibliography
 
 	% Abkürzungsverzeichnis
 	\cleardoublepage
 	\phantomsection \label{listofacs}
-	\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+	\addcontentsline{toc}{chapter}{\langabkverz}
 	\input{ads/acronyms}
-	
+
 	% Glossar
-	\printglossary[style=altlist,title=Glossar]
+	\printglossary[style=altlist,title=\langglossar]
 \end{document}

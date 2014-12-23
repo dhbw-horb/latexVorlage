@@ -1,0 +1,104 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Einstellungen
+%
+% Hier können alle relevanten Einstellungen für diese Arbeit gesetzt werden.
+% Dazu gehören Angaben u.a. über den Autor sowie Formatierungen.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sprache %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Aktuell sind Deutsch und Englisch unterstützt.
+%% Es werden nicht nur alle vom Dokument erzeugten Texte in
+%% der entsprechenden Sprache angezeigt, sondern auch weitere
+%% Aspekte angepasst, wie z.B. die Anführungszeichen und
+%% Datumsformate.
+\setzesprache{de} % oder en
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Angaben  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Die meisten der folgenden Daten werden auf dem
+%% Deckblatt angezeigt, einige auch im weiteren Verlauf
+%% des Dokuments.
+\setzemartrikelnr{1234510}
+\setzekurs{ABC2008DE}
+\setzetitel{In der Regel haben wir einen zweizeiligen Bachelorthesistitel}
+\setzedatumAbgabe{August 2011}
+\setzefirma{Firma GmbH}
+\setzefirmenort{Firmenort}
+\setzeabgabeort{Abgabeort}
+\setzeabschluss{Bachelor of Engineering}
+\setzestudiengang{Studienganges Vorderasiatische Archäologie}
+\setzedhbw{Karlsruhe}
+\setzebetreuer{Dipl.-Ing. (FH) Peter Pan}
+\setzegutachter{Dr.\ Silvana Koch-Mehrin}
+\setzezeitraum{12 Wochen}
+\setzearbeit{Bachelorarbeit}
+\setzeautor{Vorname Nachname}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bei Fehlern während der Verarbeitung bitte in ads/header.tex bei der
+%% Einbindung des Pakets biblatex (ungefähr ab Zeile 110,
+%% einmal für jede Sprache), biber in bibtex ändern.
+\newcommand{\ladeliteratur}{%
+\addbibresource{bibliographie.bib}
+%\addbibresource{weitereDatei.bib}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Verschiedene Schriftarten
+\setzeschriftart{palatino} % oder goudysans, lmodern, libertine
+%% Paket um Textteile drehen zu können
+%\usepackage{rotating}
+%% Paket um Seite im Querformat anzuzeigen
+%\usepackage{lscape}
+%% Spaltenabstand
+\setzespaltenabstand{10pt}
+%%Zeilenabstand
+\setzezeilenabstand{1.5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Verschiedenes  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Farben (Angabe in HTML-Notation mit großen Buchstaben)
+\newcommand{\ladefarben}{%
+	\definecolor{LinkColor}{HTML}{00007A}
+	\definecolor{ListingBackground}{HTML}{FCF7DE}
+}
+%% Mathematikpakete benutzen (Pakete aktivieren)
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+
+%% Programmiersprachen Highlighting (Listings)
+\newcommand{\listingsettings}{%
+	\lstset{%
+		language=Java,			% Standardsprache des Quellcodes
+		%numbers=left,			% Zeilennummern links
+		stepnumber=1,			% Jede Zeile nummerieren.
+		numbersep=5pt,			% 5pt Abstand zum Quellcode
+		numberstyle=\tiny,		% Zeichengrösse 'tiny' für die Nummern.
+		breaklines=true,		% Zeilen umbrechen wenn notwendig.
+		breakautoindent=true,	% Nach dem Zeilenumbruch Zeile einrücken.
+		postbreak=\space,		% Bei Leerzeichen umbrechen.
+		tabsize=2,				% Tabulatorgrösse 2
+		basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
+		showspaces=false,		% Leerzeichen nicht anzeigen.
+		showstringspaces=false,	% Leerzeichen auch in Strings ('') nicht anzeigen.
+		extendedchars=true,		% Alle Zeichen vom Latin1 Zeichensatz anzeigen.
+		captionpos=b,			% sets the caption-position to bottom
+		backgroundcolor=\color{ListingBackground}, % Hintergrundfarbe des Quellcodes setzen.
+		xleftmargin=0pt,		% Rand links
+		xrightmargin=0pt,		% Rand rechts
+		frame=single,			% Rahmen an
+		frameround=ffff,
+		rulecolor=\color{darkgray},	% Rahmenfarbe
+		fillcolor=\color{ListingBackground}
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Eigenes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hier können Ergänzungen zur Präambel vorgenommen werden (eigene Pakete, Einstellungen)
+
