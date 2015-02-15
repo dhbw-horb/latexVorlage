@@ -33,9 +33,9 @@
 \input{lang/strings} % verfügbare Strings
 \input{lang/\sprache} % Übersetzung einlesen
 
-\usepackage[english, ngerman]{babel}
-\iflang{de}{\selectlanguage{ngerman}} % Paket babel benutzt neue deutsche Rechtschreibung
-\iflang{en}{\selectlanguage{english}} % Paket babel benutzt Englisch
+
+\iflang{de}{\usepackage[english, ngerman]{babel}} % Paket babel benutzt neue deutsche Rechtschreibung
+\iflang{en}{\usepackage[english]{babel}} % Paket babel benutzt Englisch
 
 
 %%%%%%% Package Includes %%%%%%%
