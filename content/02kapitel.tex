@@ -1,3 +1,45 @@
 %!TEX root = ../dokumentation.tex
 
-\chapter{Das zweite Kapitel}
+\chapter{Beispiel Code-schnipsel einbinden}
+
+
+%title wird unter dem Bsp. abgedruckt
+%caption wird im Verzeichnis abgedruckt
+%label wird zum referenzieren benutzt, muss einzigartig sein.
+\lstset{caption=Code-Beispiel, label=Bsp.1, title=Hello World!,} 
+\begin{lstlisting}
+int main(void)
+{
+	system.out.printl{''Hello World!''}
+	return 0;
+} //Kommentar
+\end{lstlisting}
+%language ändert die Sprache, wenn nur eine Sprache verwendet wird diese Sprache gleich bei Einstellungen.tex ändern, standardmäßig Java
+\lstset{caption=Pascal-Code, label=Pascal-Code, title=Pascal-Code,language=Pascal} 
+\begin{lstlisting}
+for i:=maxint to 0 do
+begin
+	{ do nothing }
+end;
+Write('Case insensitive ');
+Write('Pascal keywords.');
+\end{lstlisting}
+
+\section{lorem ipsum}
+Looking for the one superhero comic you just have to read. Following the antics and adventures of May Mayday Parker, this Spider-book has everything you could want in a comic--action, laughs, mystery and someone in a Spidey suit. Collects Alias\#1-28, What If. Jessica Jones had Joined the Avengers. In her inaugural arc, Jessicas life immediately becomes expendable when she uncovers the potentially explosive secret of one heros true identity.
+
+
+
+Once upon a time, Jessica Jones was a costumed super-hero, just not a very good one. First, a story where Wolverine and Hulk come together, and then Captain America and Cable meet up. In a city of Marvels, Jessica Jones never found her niche. The classic adventures of Spider-Man from the early days up until the 90s. Looking for the one superhero comic you just have to read.
+
+
+
+Meet all of Spideys deadly enemies, from the Green Goblin and Doctor Octopus to Venom and Carnage, plus see Peter Parker fall in love, face tragedy and triumph, and learn that with great power comes great responsibility. In a city of Marvels, Jessica Jones never found her niche. Bitten by a radioactive spider, high school student Peter Parker gained the speed, strength and powers of a spider. Looking for the one superhero comic you just have to read. What do you get when you ask the question, What if Spider-Man had a daughter.
+
+
+
+The classic adventures of Spider-Man from the early days up until the 90s. Amazing Spider-Man is the cornerstone of the Marvel Universe. But will each partner’s combined strength be enough. Adopting the name Spider-Man, Peter hoped to start a career using his new abilities. Youve found it.
+
+\section{Verweis auf Code}
+Verweis auf den Code \autoref{Bsp.1}.\\
+Und der Pascal-Code \autoref{Pascal-Code}.
