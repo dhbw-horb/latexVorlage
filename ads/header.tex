@@ -114,7 +114,7 @@
 	bibwarn=true,
 	bibencoding=utf8,	% wenn .bib in utf8, sonst ascii
 	sortlocale=de_DE,
-	style=alphabetic	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf
+	style=\zitierstil,
 ]{biblatex}
 }
 \iflang{en}{%
@@ -123,7 +123,7 @@
 	bibwarn=true,
 	bibencoding=utf8,	% wenn .bib in utf8, sonst ascii
 	sortlocale=en_US,
-	style=alphabetic	%Zitierstil. Siehe http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf
+	style=\zitierstil,
 ]{biblatex}
 }
 
@@ -143,6 +143,11 @@
 % Einige häufig verwendete Sprachen
 \lstloadlanguages{PHP,Python,Java,C,C++,bash}
 \listingsettings{}
+% Umbennung des Listings
+\renewcommand\lstlistingname{\langlistingname}
+\renewcommand\lstlistlistingname{\langlistlistingname}
+\def\lstlistingautorefname{\langlistingautorefname}
 
+% Abstände in Tabellen
 \setlength{\tabcolsep}{\spaltenabstand}
 \renewcommand{\arraystretch}{\zeilenabstand}
