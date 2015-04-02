@@ -3,6 +3,7 @@
 %
 % Nahezu alle Einstellungen koennen hier getaetigt werden
 %
+\RequirePackage[l2tabu, orthodox]{nag}
 
 \documentclass[%
 	pdftex,
@@ -58,6 +59,7 @@
 \usepackage[printonlyused,footnote]{acronym}
 
 \usepackage{listings}
+
 
 % eine Kommentarumgebung "k" (Handhabe mit \begin{k}<Kommentartext>\end{k},
 % Kommentare werden rot gedruckt). Wird \% vor excludecomment{k} entfernt,
@@ -136,8 +138,8 @@
 
 % Hurenkinder und Schusterjungen verhindern
 % http://projekte.dante.de/DanteFAQ/Silbentrennung
-\clubpenalty=10000
-\widowpenalty=10000
+\clubpenalty = 10000 % schließt Schusterjungen aus (Seitenumbruch nach der ersten Zeile eines neuen Absatzes)
+\widowpenalty = 10000 % schließt Hurenkinder aus (die letzte Zeile eines Absatzes steht auf einer neuen Seite)
 \displaywidowpenalty=10000
 
 % Bildpfad

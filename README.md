@@ -1,6 +1,9 @@
 # Vorlage verwenden
 Pflichtangaben und einigen weitere Einstellungen können in `einstellungen.tex` geändert werden. Kapitel werden in `content` nach dem Schema `<nn>kapitel.tex` angelegt, wobei &lt;nn&gt; eine mindestens zweistellige Zahl sein muss. Das Logo der Firma kann durch das Ersetzen der Datei `images/fima-deckblatt.png` geändert werden. Die Größe des Bildes ändert man durch das Verkleinern/Vergrößern der Datei.
 
+## Probleme
+Probleme, die sich konkret mit der Vorlage zurückführen lassen und Verbesserungsvorschläge können mit einem Github-Account [hier](https://github.com/dhbw-horb/latexVorlage/issues) gemeldet werden. Bei Problemen ist eine nachvollziehbare Beschreibung des Problems und der eigenen Lösungsversuche notwendig.
+
 Hinweis: Unter Miktex 2.9 gibt es derzeit leider Probleme, die aber umgangen werden können. [Mehr dazu hier](https://github.com/dhbw-horb/latexVorlage/issues/23).
 
 # Compilieren
