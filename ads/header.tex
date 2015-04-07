@@ -10,12 +10,19 @@
 	oneside,			% Einseitiger Druck.
 	12pt,				% Schriftgroesse
 	parskip=half,		% Halbe Zeile Abstand zwischen Absätzen.
+	topmargin = 10pt,	% Abstand Seitenrand (Std:1in) zu Kopfzeile
+	headheight = 12pt,	% Höhe der Kopfzeile
+	headsep = 30pt,	% Abstand zwischen Kopfzeile und Text Body
 	headsepline,		% Linie nach Kopfzeile.
 	footsepline,		% Linie vor Fusszeile.
 	abstracton,			% Abstract Überschriften
-	listof=totoc,
-	toc=bibliography,
-]{scrreprt}
+	DIV=calc,		% Satzspiegel berechnen
+	BCOR=8mm,		% Bindekorrektur links: 8mm
+	headinclude=false,	% Kopfzeile nicht in den Satzspiegel einbeziehen
+	footinclude=false,	% Fußzeile nicht in den Satzspiegel einbeziehen
+	listof=totoc,		% Abbildungs-/ Tabellenverzeichnis im Inhaltsverzeichnis darstellen
+	toc=bibliography,	% Literaturverzeichnis im Inhaltsverzeichnis darstellen
+]{scrreprt}	% Koma-Script repor tKlasse , fuer laengere Bachelorarbeiten alternativ auch: scrbook
 
 % Einstellungen laden
 \usepackage{xstring}
@@ -41,7 +48,7 @@
 
 %%%%%%% Package Includes %%%%%%%
 
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=3cm,foot=2cm]{geometry}	% Seitenränder und Abstände
 \usepackage[activate]{microtype} %Zeilenumbruch und mehr
 \usepackage[onehalfspacing]{setspace}
 \usepackage{makeidx}
@@ -56,7 +63,7 @@
 \usepackage{wrapfig}
 \usepackage{pgffor} % für automatische Kapiteldateieinbindung
 \usepackage[perpage, hang, multiple, stable]{footmisc}
-\usepackage[printonlyused,footnote]{acronym}
+\usepackage[printonlyused]{acronym} % falls gewünscht kann die Option footnote eingefügt werden, dann wird die Erklärung nicht inline sondern in einer Fußnote dargestellt
 
 \usepackage{listings}
 
