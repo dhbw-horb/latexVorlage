@@ -6,7 +6,14 @@
 %caption wird im Verzeichnis abgedruckt
 %label wird zum referenzieren benutzt, muss einzigartig sein.
 
-\begin{lstlisting}[caption=Code-Beispiel, label=Bsp.1]
+Der Quelltext \ref{blinky_source} wurde aus einer C-Datei eingebunden:
+\lstinputlisting[language=C,basicstyle=\ttfamily\scriptsize,
+caption={simple blinky for STM32F4},label={blinky_source}]{files/blinky.c}
+Auf den Quelltext in \autoref{blinky_source} wird nun abermals Bezug genommen...
+
+
+\autoref{Bsp.1} und \ref{Python-Code} wurden direkt in die \LaTeX-Datei  geschrieben:
+\begin{lstlisting}[caption=Code-Beispiel, label=Bsp.1, language=Java]
 public class HelloWorld {
 	public static void main (String[] args) {
 		// Ausgabe Hello World!

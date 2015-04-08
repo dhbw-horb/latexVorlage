@@ -1,24 +1,31 @@
 %!TEX root = ../dokumentation.tex
 
 \chapter{Das erste Kapitel}
-Erste Erwähnung eines Akronyms wird als Fußnote angezeigt. Jede weitere wird
-nur verlinkt: \acf{AGPL}. \cite{fsf:2007}
+Hier steht z.\ B.\ eine kleine Einleitung...
+\section{Verweise und Verlinkungen mit den Verzeichnissen}
+\subsection{Akronyme / Abkürzungen}
+Erste Erwähnung eines Akronyms wird ausgeschrieben mit Akürzung in Klammern angezeigt: \ac{AGPL}. Jede weitere wird nur in Kurzform verlinkt. Zweite Erwähnung: mehr zu \ac{AGPL} in \cite{fsf:2007}
 
-Verweise auf das Glossar: \gls{Glossareintrag}, \glspl{Glossareintrag}
+\subsection{Verweise auf das Glossar}
+Singular: \gls{Glossareintrag}, Plural: \glspl{Glossareintrag}
 
-Nur erwähnte Literaturverweise werden auch im Literaturverzeichnis gedruckt:
-\cite{baumgartner:2002}, \cite{dreyfus:1980}
+\subsection{Literaturverweise}
+Nur erwähnte Literaturverweise werden auch im Literaturverzeichnis gedruckt:\\
+Indirektes Zitat (vgl. \cite{baumgartner:2002}) oder auch ein ``direktes Zitat'', \cite{dreyfus:1980}.
+\paragraph{}
+\textquote[{\cite[S. 35]{baumgartner:2002}}]{Ein direktes Zitat, welches mehr als eine Zeile lang ist, sollte nicht im Fließtext stehen.}
 
-Meine erste Fußnote\footnote{Ich bin eine Fußnote}
-
-\begin{wrapfigure}{r}{.4\textwidth}
+\subsection{Bildverweise}
+\begin{wrapfigure}{R}{.4\textwidth}
 \includegraphics[height=.4\textwidth]{logo.png}
-\vspace{-20pt}
-\caption{Das Logo der Musterfirma\footnotemark}
+%\vspace{-20pt}
+\caption{Musterfirmenlogo \cite{mustermann:2012}}
+\label{fig:muster-logo1}
 \end{wrapfigure}
-%Quelle muss in Fußnote stehen (da sonst aufgrund eines Fehlers nicht kompiliert
-% wird)
-\footnotetext{aus \cite{mustermann:2012}}
+In \autoref{fig:firmen-logo} auf Seite \pageref{fig:firmen-logo} könnte ein tatsächliches Firmenlogo zu sehen sein. Da dieser Text sehr kurz ist, rutscht \autoref{fig:muster-logo1} in den den folgenden Abschnitt, wo sie jedoch eigentlich nicht hingehört.
+
+
+\section{Fließtext mit Abbildung}
 Looking for the one superhero comic you just have to read. Following the antics and adventures of May Mayday Parker, this Spider-book has everything you could want in a comic--action, laughs, mystery and someone in a Spidey suit. Collects Alias \#1-28, What If. Jessica Jones had Joined the Avengers. In her inaugural arc, Jessicas life immediately becomes expendable when she uncovers the potentially explosive secret of one heros true identity. In her inaugural arc, Jessicas life immediately becomes expendable when she uncovers the potentially explosive secret of one heros true identity.
 
 Once upon a time, Jessica Jones was a costumed super-hero, just not a very good one. First, a story where Wolverine and Hulk come together, and then Captain America and Cable meet up. In a city of Marvels, Jessica Jones never found her niche. The classic adventures of Spider-Man from the early days up until the 90s. Looking for the one superhero comic you just have to read. In her inaugural arc, Jessicas life immediately becomes expendable when she uncovers the potentially explosive secret of one heros true identity.

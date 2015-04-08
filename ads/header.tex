@@ -3,19 +3,21 @@
 %
 % Nahezu alle Einstellungen koennen hier getaetigt werden
 %
-\RequirePackage[l2tabu, orthodox]{nag}
+
+\RequirePackage[l2tabu, orthodox]{nag}	% weist in Commandozeile bzw. log auf veraltete LaTeX Syntax hin
 
 \documentclass[%
 	pdftex,
 	oneside,			% Einseitiger Druck.
 	12pt,				% Schriftgroesse
 	parskip=half,		% Halbe Zeile Abstand zwischen Absätzen.
-	topmargin = 10pt,	% Abstand Seitenrand (Std:1in) zu Kopfzeile
+%	topmargin = 10pt,	% Abstand Seitenrand (Std:1in) zu Kopfzeile [laut log: unused]
 	headheight = 12pt,	% Höhe der Kopfzeile
-	headsep = 30pt,	% Abstand zwischen Kopfzeile und Text Body
+%	headsep = 30pt,	% Abstand zwischen Kopfzeile und Text Body  [laut log: unused]
 	headsepline,		% Linie nach Kopfzeile.
 	footsepline,		% Linie vor Fusszeile.
-	abstracton,			% Abstract Überschriften
+	footheight = 16pt,	% Höhe der Fusszeile
+	abstracton,		% Abstract Überschriften
 	DIV=calc,		% Satzspiegel berechnen
 	BCOR=8mm,		% Bindekorrektur links: 8mm
 	headinclude=false,	% Kopfzeile nicht in den Satzspiegel einbeziehen
@@ -41,14 +43,15 @@
 \input{lang/strings} % verfügbare Strings
 \input{lang/\sprache} % Übersetzung einlesen
 
-\usepackage[english, ngerman]{babel}
-\iflang{de}{\selectlanguage{ngerman}} % Paket babel benutzt neue deutsche Rechtschreibung
-\iflang{en}{\selectlanguage{english}} % Paket babel benutzt Englisch
+\iflang{de}{\usepackage[ngerman]{babel}}
+\iflang{en}{\usepackage[english]{babel}}
+%\iflang{de}{\selectlanguage{ngerman}} % Paket babel benutzt neue deutsche Rechtschreibung
+%\iflang{en}{\selectlanguage{english}} % Paket babel benutzt Englisch
 
 
 %%%%%%% Package Includes %%%%%%%
 
-\usepackage[margin=3cm,foot=2cm]{geometry}	% Seitenränder und Abstände
+\usepackage[margin=\seitenrand,foot=1cm]{geometry}	% Seitenränder und Abstände
 \usepackage[activate]{microtype} %Zeilenumbruch und mehr
 \usepackage[onehalfspacing]{setspace}
 \usepackage{makeidx}
@@ -62,7 +65,7 @@
 \usepackage[right]{eurosym}
 \usepackage{wrapfig}
 \usepackage{pgffor} % für automatische Kapiteldateieinbindung
-\usepackage[perpage, hang, multiple, stable]{footmisc}
+\usepackage[perpage, hang, multiple, stable]{footmisc} % Fussnoten
 \usepackage[printonlyused]{acronym} % falls gewünscht kann die Option footnote eingefügt werden, dann wird die Erklärung nicht inline sondern in einer Fußnote dargestellt
 
 \usepackage{listings}
@@ -141,6 +144,7 @@
 % Glossar
 \usepackage[nonumberlist,toc]{glossaries}
 
+
 %%%%%% Additional settings %%%%%%
 
 % Hurenkinder und Schusterjungen verhindern
@@ -154,7 +158,9 @@
 
 % Einige häufig verwendete Sprachen
 \lstloadlanguages{PHP,Python,Java,C,C++,bash}
+
 \listingsettings{}
+
 % Umbennung des Listings
 \renewcommand\lstlistingname{\langlistingname}
 \renewcommand\lstlistlistingname{\langlistlistingname}

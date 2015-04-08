@@ -54,11 +54,20 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Verschiedene Schriftarten
-\setzeschriftart{palatino} % oder goudysans, lmodern, libertine
+% laut nag Warnung: palatino obsolete, use mathpazo, helvet (option scaled=.95), courier instead
+\setzeschriftart{lmodern} % palatino oder goudysans, lmodern, libertine
+
 %% Paket um Textteile drehen zu können
 %\usepackage{rotating}
 %% Paket um Seite im Querformat anzuzeigen
 %\usepackage{lscape}
+
+%% Seitenränder
+\setzeseitenrand{2.5cm}
+
+%% Abstand vor Kapitelüberschriften zum oberen Seitenrand
+\setzekapitelabstand{20pt}
+
 %% Spaltenabstand
 \setzespaltenabstand{10pt}
 %%Zeilenabstand innerhalb einer Tabelle
@@ -98,7 +107,51 @@
 		frame=single,			% Rahmen an
 		frameround=ffff,
 		rulecolor=\color{darkgray},	% Rahmenfarbe
-		fillcolor=\color{ListingBackground}
+		fillcolor=\color{ListingBackground},
+		keywordstyle=\color[rgb]{0.133,0.133,0.6},
+		commentstyle=\color[rgb]{0.133,0.545,0.133},
+		stringstyle=\color[rgb]{0.627,0.126,0.941}
+	}
+	\lstset{%
+		language=C,            % Sprache des Quellcodes
+		numbers=left,           % Zeilennummern links
+		stepnumber=1,            % Jede Zeile nummerieren.
+		numbersep=5pt,           % 5pt Abstand zum Quellcode
+		numberstyle=\tiny,       % Zeichengrösse 'tiny' für die Nummern.
+		frame=1,
+		breaklines=true,         % Zeilen umbrechen wenn notwendig.
+		breakautoindent=true,    % Nach dem Zeilenumbruch Zeile einrücken.
+		postbreak=\space,        % Bei Leerzeichen umbrechen.
+		tabsize=2,               % Tabulatorgrösse 2
+		basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
+		showspaces=false,        % Leerzeichen nicht anzeigen.
+		showstringspaces=false,  % Leerzeichen auch in Strings ('') nicht anzeigen.
+		extendedchars=true,      % Alle Zeichen vom Latin1 Zeichensatz anzeigen.
+		captionpos=b,            % sets the caption-position to bottom
+		backgroundcolor=\color{ListingBackground}, % Hintergrundfarbe des Quellcodes setzen.
+		keywordstyle=\color[rgb]{0.133,0.133,0.6},
+		commentstyle=\color[rgb]{0.133,0.545,0.133},
+		stringstyle=\color[rgb]{0.627,0.126,0.941}
+	}
+	\lstset{%
+%		language=C++, 
+		basicstyle= \small \ttfamily, %
+%		frame=tb, 			% top bottom frame lines; alternative: single or 1
+		columns=flexible, 
+		showspaces=false,  	% show spaces adding special underscores
+		showstringspaces=false,	% underline spaces within strings
+		showtabs=false,               	% show tabs within strings adding particular underscores
+		frame=lines,	                	% add a frame around the code
+		tabsize=2,	                	% default tabsize: 4 spaces
+		breaklines=true,                % automatic line breaking
+		breakatwhitespace=false,	% automatic breaks should only happen at whitespace
+		captionpos=b,            	% sets the caption-position to bottom
+%		numbers=left, 
+%		numberstyle=\tiny,
+		keywordstyle=\color[rgb]{0.133,0.133,0.6},
+		commentstyle=\color[rgb]{0.133,0.545,0.133},
+		stringstyle=\color[rgb]{0.627,0.126,0.941},
+		backgroundcolor=\color{ListingBackground} % Hintergrundfarbe des Quellcodes setzen.
 	}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

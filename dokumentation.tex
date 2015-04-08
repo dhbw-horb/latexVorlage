@@ -40,9 +40,10 @@
 
 	\pagestyle{plain}		% nur Seitenzahlen im Fuß
 	
-	\newgeometry{voffset=-2cm,top=2cm,bottom=2.5cm}
-	\topmargin = 0cm	% Abstand Seitenrand (Std:1in) zu Kopfzeile
-	\headsep = 22pt	% Abstand zwischen Kopfzeile und Text Body
+	\RedeclareSectionCommand[beforeskip=\kapitelabstand]{chapter} % stellt Abstand vor Kapitelüberschriften ein
+%	\newgeometry{voffset=-2cm,top=2cm,bottom=2.5cm}
+%	\topmargin = 0cm	% Abstand Seitenrand (Std:1in) zu Kopfzeile
+%	\headsep = 22pt	% Abstand zwischen Kopfzeile und Text Body
 
 	% Inhaltsverzeichnis
 	\begin{spacing}{1.1}
