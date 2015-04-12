@@ -4,3 +4,4 @@ output/
 dokumentation.pdf
 *.swp
 *.backup
+*.orig

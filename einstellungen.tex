@@ -54,11 +54,20 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Verschiedene Schriftarten
-\setzeschriftart{palatino} % oder goudysans, lmodern, libertine
+% laut nag Warnung: palatino obsolete, use mathpazo, helvet (option scaled=.95), courier instead
+\setzeschriftart{lmodern} % palatino oder goudysans, lmodern, libertine
+
 %% Paket um Textteile drehen zu können
 %\usepackage{rotating}
 %% Paket um Seite im Querformat anzuzeigen
 %\usepackage{lscape}
+
+%% Seitenränder
+\setzeseitenrand{2.5cm}
+
+%% Abstand vor Kapitelüberschriften zum oberen Seitenrand
+\setzekapitelabstand{20pt}
+
 %% Spaltenabstand
 \setzespaltenabstand{10pt}
 %%Zeilenabstand innerhalb einer Tabelle
@@ -79,7 +88,7 @@
 \newcommand{\listingsettings}{%
 	\lstset{%
 		language=Java,			% Standardsprache des Quellcodes
-		%numbers=left,			% Zeilennummern links
+		numbers=left,			% Zeilennummern links
 		stepnumber=1,			% Jede Zeile nummerieren.
 		numbersep=5pt,			% 5pt Abstand zum Quellcode
 		numberstyle=\tiny,		% Zeichengrösse 'tiny' für die Nummern.
@@ -98,7 +107,10 @@
 		frame=single,			% Rahmen an
 		frameround=ffff,
 		rulecolor=\color{darkgray},	% Rahmenfarbe
-		fillcolor=\color{ListingBackground}
+		fillcolor=\color{ListingBackground},
+		keywordstyle=\color[rgb]{0.133,0.133,0.6},
+		commentstyle=\color[rgb]{0.133,0.545,0.133},
+		stringstyle=\color[rgb]{0.627,0.126,0.941}
 	}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
