@@ -24,8 +24,7 @@
 	\end{spacing}
 	\newpage
 
-	\renewcommand{\thepage}{\Roman{page}}
-	\setcounter{page}{1}
+	\pagenumbering{Roman}
 
 	% Sperrvermerk
 	\input{ads/sperrvermerk}
@@ -39,7 +38,9 @@
 	\input{ads/abstract}
 	\newpage
 
-	\pagestyle{plain}
+	\pagestyle{plain}		% nur Seitenzahlen im Fuß
+	
+	\RedeclareSectionCommand[beforeskip=\kapitelabstand]{chapter} % stellt Abstand vor Kapitelüberschriften ein
 
 	% Inhaltsverzeichnis
 	\begin{spacing}{1.1}
@@ -50,8 +51,28 @@
 	\end{spacing}
 	\newpage
 
-	\renewcommand{\thepage}{\arabic{page}}
-	\setcounter{page}{1}
+	% Abkürzungsverzeichnis
+	\cleardoublepage
+	\phantomsection \label{listofacs}
+	\addcontentsline{toc}{chapter}{\langabkverz}
+	\input{ads/acronyms}
+
+	% Abbildungsverzeichnis
+	\cleardoublepage
+	\listoffigures
+
+	%Tabellenverzeichnis
+	\cleardoublepage
+	\listoftables
+
+	% Quellcodeverzeichnis
+	\cleardoublepage
+	\lstlistoflistings
+	\cleardoublepage
+
+	\pagenumbering{arabic}
+	
+	\pagestyle{headings}		% Kolumnentitel im Kopf, Seitenzahlen im Fuß
 
 	% Inhalt
 	\foreach \i in {01,02,03,...,99} {%
@@ -66,29 +87,11 @@
 
 	% Anhang
 	\clearpage
-	\pagenumbering{roman}
-
-	% Abbildungsverzeichnis
-	\cleardoublepage
-	\listoffigures
-
-	%Tabellenverzeichnis
-	\cleardoublepage
-	\listoftables
-
-	% Quellcodeverzeichnis
-	\cleardoublepage
-	\lstlistoflistings
+	%\pagenumbering{roman}
 
 	% Literaturverzeichnis
 	\cleardoublepage
 	\printbibliography
-
-	% Abkürzungsverzeichnis
-	\cleardoublepage
-	\phantomsection \label{listofacs}
-	\addcontentsline{toc}{chapter}{\langabkverz}
-	\input{ads/acronyms}
 
 	% Glossar
 	\printglossary[style=altlist,title=\langglossar]
