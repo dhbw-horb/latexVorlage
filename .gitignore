@@ -2,6 +2,8 @@
 .project
 output/
 dokumentation.pdf
+*.pdf
 *.swp
 *.backup
+*.bak
 *.orig

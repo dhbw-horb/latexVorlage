@@ -53,8 +53,6 @@
 
 	% Abkürzungsverzeichnis
 	\cleardoublepage
-	\phantomsection \label{listofacs}
-	\addcontentsline{toc}{chapter}{\langabkverz}
 	\input{ads/acronyms}
 
 	% Abbildungsverzeichnis
@@ -85,9 +83,7 @@
 			}
 	}
 
-	% Anhang
 	\clearpage
-	%\pagenumbering{roman}
 
 	% Literaturverzeichnis
 	\cleardoublepage
@@ -95,4 +91,10 @@
 
 	% Glossar
 	\printglossary[style=altlist,title=\langglossar]
+	
+	% sonstiger Anhang
+	\clearpage
+	\appendix
+	\input{ads/appendix}
+	
 \end{document}
