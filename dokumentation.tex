@@ -44,10 +44,20 @@
 
 	% Inhaltsverzeichnis
 	\begin{spacing}{1.1}
-		\setcounter{tocdepth}{1}
-		%für die Anzeige von Unterkapiteln im Inhaltsverzeichnis
-		%\setcounter{tocdepth}{2}
-		\tableofcontents
+		\begingroup
+		
+			% auskommentieren für Seitenzahlen unter Inhaltsverzeichnis
+			\renewcommand*{\chapterpagestyle}{empty}
+			\pagestyle{empty}
+			
+			
+			\setcounter{tocdepth}{1}
+			%für die Anzeige von Unterkapiteln im Inhaltsverzeichnis
+			%\setcounter{tocdepth}{2}
+			
+			\tableofcontents
+			\clearpage
+		\endgroup
 	\end{spacing}
 	\newpage
 
