@@ -7,3 +7,4 @@ dokumentation.pdf
 *.backup
 *.bak
 *.orig
+*compile.log

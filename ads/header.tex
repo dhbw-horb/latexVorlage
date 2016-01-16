@@ -70,13 +70,11 @@
 
 \usepackage{listings}
 
+% Notizen. Einsatz mit \todo{Notiz} oder \todo[inline]{Notiz}. 
+\usepackage[obeyFinal,backgroundcolor=yellow,linecolor=black]{todonotes}
+% Alle Notizen ausblenden mit der Option "final" in \documentclass[...] oder durch das auskommentieren folgender Zeile
+% \usepackage[disable]{todonotes}
 
-% eine Kommentarumgebung "k" (Handhabe mit \begin{k}<Kommentartext>\end{k},
-% Kommentare werden rot gedruckt). Wird \% vor excludecomment{k} entfernt,
-% werden keine Kommentare mehr gedruckt.
-\usepackage{comment}
-\specialcomment{k}{\begingroup\color{red}}{\endgroup}
-%\excludecomment{k}
 
 
 %%%%%% Configuration %%%%%
