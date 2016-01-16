@@ -67,7 +67,6 @@
 \usepackage{pgffor} % für automatische Kapiteldateieinbindung
 \usepackage[perpage, hang, multiple, stable]{footmisc} % Fussnoten
 \usepackage[printonlyused]{acronym} % falls gewünscht kann die Option footnote eingefügt werden, dann wird die Erklärung nicht inline sondern in einer Fußnote dargestellt
-
 \usepackage{listings}
 
 % Notizen. Einsatz mit \todo{Notiz} oder \todo[inline]{Notiz}. 
@@ -75,6 +74,9 @@
 % Alle Notizen ausblenden mit der Option "final" in \documentclass[...] oder durch das auskommentieren folgender Zeile
 % \usepackage[disable]{todonotes}
 
+% Kommentarumgebung. Einsatz mit \comment{}. Alle Kommentare ausblenden mit dem Auskommentieren der folgenden und dem aktivieren der nächsten Zeile.
+\newcommand{\comment}[1]{\par {\bfseries \color{blue} #1 \par}} %Kommentar anzeigen
+% \newcommand{\comment}[1]{} %Kommentar ausblenden
 
 
 %%%%%% Configuration %%%%%
