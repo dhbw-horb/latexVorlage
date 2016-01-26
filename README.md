@@ -39,7 +39,6 @@ Wenn kein latexmk installiert werden kann oder soll, stellt das makefile auch di
 
 # Nur Deckblatt verwenden
 ```latex
-\usepackage{pdfpages}
 % .....
 \includepdf[pages=1]{../latexVorlage/dokumentation.pdf}
 ```
