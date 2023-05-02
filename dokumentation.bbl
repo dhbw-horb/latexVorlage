@@ -3,8 +3,8 @@
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated by
-% biber as required.
+% This file may safely be deleted. It will be recreated as
+% required.
 %
 \begingroup
 \makeatletter
@@ -16,5 +16,229 @@
   {}
 \endgroup
 
-\endinput
+\datalist[entry]{nty/global//global/global}
+  \entry{Luderer2017}{book}{}
+    \name{author}{1}{}{%
+      {{hash=LB}{%
+         family={Luderer},
+         familyi={L\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Fachmedien Wiesbaden}%
+    }
+    \strng{namehash}{LB1}
+    \strng{fullhash}{LB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{isbn}{9783658191870}
+    \field{pages}{104\bibrangedash 105}
+    \field{title}{Facetten der Wirtschaftsmathematik: Eine unterhaltsame
+  Einf{\"u}hrung ganz ohne Formeln}
+    \verb{url}
+    \verb https://books.google.de/books?id=F256swEACAAJ
+    \endverb
+    \field{year}{2017}
+  \endentry
 
+  \entry{Martello1987}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=MS}{%
+         family={Martello},
+         familyi={M\bibinitperiod},
+         given={Silvano},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Toth},
+         familyi={T\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \name{editor}{4}{}{%
+      {{hash=MS}{%
+         family={Martello},
+         familyi={M\bibinitperiod},
+         given={Silvano},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Laporte},
+         familyi={L\bibinitperiod},
+         given={Gilbert},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Minoux},
+         familyi={M\bibinitperiod},
+         given={Michel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Ribeiro},
+         familyi={R\bibinitperiod},
+         given={Celso},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {North-Holland}%
+    }
+    \strng{namehash}{MSTP1}
+    \strng{fullhash}{MSTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Publisher Summary This chapter presents a great variety of practical
+  problems that are represented by a set of entities, each having an associated
+  value, from which one or more subsets has to be selected in such a way that
+  the sum of the values of the selected entities is maximized and some
+  predefined conditions. The most common condition is obtained by associating a
+  size to each entity and establishing that the sum of the entity sizes in each
+  subset does not exceed some prefixed bound. These problems are generally
+  called knapsack problems, as they recall the situation of a hitch-hiker
+  having to fill up knapsack by selecting from among various possible objects
+  those that provides the maximum comfort. The entities are called as items and
+  their number is indicated by n. The value and size associated with the j-th
+  item are called as profit and weight. The majority of problems are considered
+  as single knapsack problems, where one container must be filled with an
+  optimal subset of items. The chapter reviews both exact and approximate
+  algorithms for the solution of the most important types of knapsack problems.
+  Exact solutions are obtained through branch-and-bound algorithms or dynamic
+  programming, or a combination of the two approaches. The performances of
+  these algorithms are evaluated by computational experiments with randomly
+  generated test problems. Approximate algorithms are of the greedy type or are
+  based on scaling. They are evaluated on the basis of their worst-case
+  performance.%
+    }
+    \field{booktitle}{Surveys in Combinatorial Optimization}
+    \verb{doi}
+    \verb https://doi.org/10.1016/S0304-0208(08)73237-7
+    \endverb
+    \field{issn}{0304-0208}
+    \field{pages}{213\bibrangedash 257}
+    \field{series}{North-Holland Mathematics Studies}
+    \field{title}{Algorithms for Knapsack Problems}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0304020808732377
+    \endverb
+    \field{volume}{132}
+    \field{year}{1987}
+  \endentry
+
+  \entry{Martello1990}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MS}{%
+         family={Martello},
+         familyi={M\bibinitperiod},
+         given={Silvano},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Toth},
+         familyi={T\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \keyw{integer programming, knapsack problem, branch-and-bound}
+    \strng{namehash}{MSTP1}
+    \strng{fullhash}{MSTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Given n types, each having an associated profit and weight, and a container
+  of given capacity, the unbounded knapsack problem is to determine the number
+  of items of each type to be selected so that the corresponding total profit
+  is a maximum and the corresponding total weight does not exceed the capacity.
+  We present upper bounds, dominance relations, and an approach—based on the
+  definition of a core problem—to the exact solution of very large instances
+  of the problem. We give the results of computational experiments on randomly
+  generated test problems involving up to 250 000 item types.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/0167-6377(90)90035-4
+    \endverb
+    \field{issn}{0167-6377}
+    \field{number}{1}
+    \field{pages}{15\bibrangedash 20}
+    \field{title}{An exact algorithm for large unbounded knapsack problems}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/0167637790900354
+    \endverb
+    \field{volume}{9}
+    \field{journaltitle}{Operations Research Letters}
+    \field{year}{1990}
+  \endentry
+
+  \entry{Schury2013}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=SC}{%
+         family={Schury},
+         familyi={S\bibinitperiod},
+         given={Christoph},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {German}%
+    }
+    \keyw{Rucksackproblem, Kollektiventscheidung, Online-Publikation}
+    \strng{namehash}{SC1}
+    \strng{fullhash}{SC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{IV, 55}
+    \field{title}{Social Choice Methoden zur Lösung von mehrdimensionalen
+  Rucksackproblemen / Social Choice Methods for the solution of the
+  multimensional knapsack problem}
+    \list{institution}{1}{%
+      {Universität Graz}%
+    }
+    \field{type}{mathesis}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Vocking2008}{book}{}
+    \name{editor}{2}{}{%
+      {{hash=VB}{%
+         family={Vöcking},
+         familyi={V\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=w}{%
+         family={weitere},
+         familyi={w\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{VBw1}
+    \strng{fullhash}{VBw1}
+    \field{labelnamesource}{editor}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{isbn}{9783540763932}
+    \field{pages}{405\bibrangedash 413}
+    \field{title}{Taschenbuch der Algorithmen}
+    \list{location}{1}{%
+      {Berlin, Heidelberg}%
+    }
+    \field{year}{2008}
+  \endentry
+\enddatalist
+\endinput

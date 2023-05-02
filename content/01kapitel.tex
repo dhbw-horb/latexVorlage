@@ -1,3 +1,60 @@
 %!TEX root = ../dokumentation.tex
 
-\chapter{Das erste Kapitel}
+\chapter{Einleitung}
+Bei dem Rucksackproblem handelt es sich um eine einfach zu beschreibende, aber auf keinen Fall einfach zu lösende Aufgabe der diskreten Mathematik. Zur Lösung des Problems werden meist heuristische Verfahren oder Methoden der dynamischen Optimierung verwendet. \cite[vgl.][]{Luderer2017} \\
+Anschaulich geht es bei dem Rucksackproblem um einen Rucksack, der höchstens ein bestimmtes vorgegebenes Gewicht $T$ tragen kann. $T$ wird als Gewichtsschranke bezeichnet. Neben dem Rucksack gibt es eine Menge von Gegenschänden. Diese werden als $n$ Objekten bezeichnet. Jedes Objekt hat ein Gewicht und einen Profit. Untersucht wird nun die Teilmengen der Objekte, die die Gewichtsschranke $T$ nicht verletzten, dabei aber einen möglichst großen Gesamtprofit haben. Das heißt, die Summe der Profite der eingepackten Objekte maximal wird. \\
+Rein intuitiv erscheint es sinnvoll, die Objekte mit dem größten Profit pro Gewichtseinheit zuerst auszuwählen. Das Verhältnis zwischen Profit und Gewicht eines Objektes wird auch als Profitdichte bezeichnet. Die intuitive Lösung ist allerdings nicht immer die beste, da die Gewichtsschranke $T$ teilweise stark unterschritten wird, ein weiteres Objekt jedoch die Gewichtsschranke überschreiten würde. Das heißt, es wird möglicherweise Platz verschwendet.\\
+Die beste Lösung kann garantiert durch Ausprobieren aller möglichen Kombinationen gefunden werden. Allerdings gibt es sehr viele Kombinationsmöglichkeiten. Für jedes einzelne Objekt ist zu entscheiden, ob es in den Rucksack gepackt wird oder nicht. Somit gibt es pro Objekt zwei Möglichkeiten. Bei $n$ Objekten ergeben sich $2^n$ Kombinationsmöglichkeiten. Durch das exponentielle Wachstum der Kombinationsmöglichkeiten „explodiert“ die Anzahl der möglichen Teilmengen. Beispielsweise wäre das Rucksackproblem bei 60 Objekten durch diesen Ansatz mit heutigen Mitteln kaum lösbar, da es bereits $2^{60} = 1 152 921 504 606 846 976$ Kombinationsmöglichkeiten gibt. Angenommen, ein Computer schafft es, eine Milliarde Teilmengen pro Sekunden zu berechnen und zu testen. Dann benötigte dieser trotzdem noch über 36 Jahre, um alle Teilmengen auszuprobieren. \cite[vgl.][]{Vocking2008} \\
+In dieser Arbeit wird auf das klassische binäre Rucksackproblem, auch 0-1 Rucksackproblem genannt, eingegangen. Dabei gibt es nur die Möglichkeit ein Objekt einzupacken oder nicht. Kopien eines Objektes sind dabei nicht erlaubt. Varianten des Rucksackproblems, in denen Kopien eines Objektes erlaubt sind, wie zum Beispiel das Bounded Rucksackproblem, werden in wenigen Sätzen erläutert.
+
+\section{Mathematische Formulierung}
+Mathematisch kann das Rucksackproblem durch ein Ganzzahliges Lineares Programm abgebildete werden. Dabei gebe es ein Rucksack oder anderes Gefäß mit Kapazität $c$ und $n$ Objekt beziehungsweise Gegenstände mit
+\begin{itemize}
+    \item Profit $p_j$ mit $j=1,\ldots,n$ und
+    \item Gewicht $w_j$ mit $j=1,\ldots,n$.
+\end{itemize}
+Die einfachste Form des Rucksackproblems, das 0-1 Rucksackproblem, kann mathematisch folgendermaßen dargestellt werden: \cite[vgl.][]{Martello1987}
+
+Maximize
+\begin{equation}
+z=\sum_{j=1}^{n}{p_jx_j} 
+\end{equation}
+Subject to 
+\begin{equation} \label{eqn:subjectTo}
+\sum_{j=1}^{n}{w_jx_j\le c}
+\end{equation}
+\begin{equation} \label{eqn:bedingung}
+x_j\in\{0,1\},\ \ j=1,\ldots,n
+\end{equation}
+
+Dabei ist $x_j = 1$, wenn das Objekt an der Stelle $j$ ausgewählt wird. Wird das Objekt nicht ausgewählt ist $x_j = 0$. Da Profite und Gewichte positiv sind, wird ohne Beschränkung der Allgemeinheit angenommen, dass gilt: \cite[vgl.][]{Martello1987}
+\begin{eqnarray}
+\sum_{j=1}^{n}{w_j>c} \\
+w_j\le c,\ \ j=1,\ldots,n
+\end{eqnarray}
+
+
+\section{Komplexität NP-Schwer/Vollständig}
+Das Rucksackproblem ist NP-Schwer und NP-Vollständig, weil bewiesen wurde, dass das Teilsummenproblem (englisch: \ac{SSB}) ebenfalls NP-Schwer und NP-Vollständig ist. \textcolor{red}{Beweis aufführen? vgl. Martello S.233f} Das Teilsummenproblem ein Spezialfall des Rucksackproblems unter der Bedingung, dass $p_j=w_j$ für alle $j \in \{1, \dots n\}$. Das Teilsummenproblem kann mathematisch wie folgt dargestellt werden: \cite[vgl.][]{Martello1987}
+\newpage
+Maximize
+\begin{equation}
+z=\sum_{j=1}^{n}{w_jx_j} 
+\end{equation}
+Subject to 
+\begin{eqnarray}
+\sum_{j=1}^{n}{w_jx_j\le c}\\
+x_j\in\{0,1\},\ \ j=1,\ldots,n
+\end{eqnarray}
+
+
+\textcolor{red}{stimmt der satz so?:} Dadurch kann das Rucksackproblem wiederum auf das Teilsummenproblem reduziert werden. 
+
+\section{Verschiedene Arten des Rucksackproblems}
+Neben dem klassischen 0-1 Rucksackproblem gibt es weitere Formen des Problems, die im Folgenden in einigen Sätzen beschrieben werden. Es werden nicht alle Varianten des Rucksackproblems aufgeführt. 
+\subsection{Bounded Rucksackproblem}
+Beim Bounded Rucksackproblem können endlich viele identische Kopien $b_j$ eines Objektes $j$ eingepackt werden. Dadurch ändert sich lediglich die Bedingung \ref{eqn:bedingung} der Formel \ref{eqn:subjectTo} von $x_j\in\{0,1\}$ zu $0\le\ x_j\le\ b_j$. Dadurch kann $x_j$ jeden ganzzahligen Wert $0$ und $b_j$ annehmen. \cite[vgl.][]{Martello1990} Das Unbounded Rucksackproblem kann in das klassische 0-1 Rucksackproblem transformiert werden \cite[vgl.][]{Schury2013}.
+\subsection{Unbounded Rucksackproblem}
+Beim Unbounded Rucksackproblem können im Gegensatz zum Bounded Rucksackproblem unendlich viele identische Kopien $b_j$ eines Objektes $j$ eingepackt werden. Dadurch ändert sich die Bedingung \ref{eqn:bedingung} der Formel \ref{eqn:subjectTo} von $x_j\in\{0,1\}$ zu $x_j\geq\ 0$. Dadurch kann $x_j$ jeden ganzzahligen Wert größer als $0$ annehmen. Das Unbounded Rucksackproblem kann in das 0-1 Rucksackproblem transformiert werden. \cite[vgl.][]{Schury2013}
+\subsection{Multiples Rucksackproblem}
+Bei dem Multiplen Rucksackproblem stehen anstatt eines einzelnen Rucksacks oder Gefäß $m$ Rucksäcke mit unterschiedlichen Kapazitäten $c_m$ zur Verfügung. Alle Gegenstände sollen nun in die Rucksäcke verteilt werden, sodass keine Gewichtsschranke überschritten und der Profit maximal wird. Dabei wird aus der Binärvariable $x_j$ des 0-1 Rucksackproblems eine Binärvariablenmatrix. Diese beschreibt, welches Objekt $j$ in welchen Rucksack $i$ eingepackt wird. \cite[vgl.][]{Martello1990}
