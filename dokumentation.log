@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  2 MAY 2023 11:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  2 MAY 2023 12:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1378,28 +1378,18 @@ Package biblatex Info: Reference segment=0 on input line 19.
 Package nag Info: Command \caption@xlabel not defined, skipping amendment on input line 19.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input line 19.
  (./ads/deckblatt.tex
-<images/firma-deckblatt.png, id=7, 100.375pt x 100.375pt>
-File: images/firma-deckblatt.png Graphic file (type png)
-<use images/firma-deckblatt.png>
-Package pdftex.def Info: images/firma-deckblatt.png  used on input line 5.
-(pdftex.def)             Requested size: 100.37474pt x 100.37474pt.
-<images/dhbw.png, id=9, 710.655pt x 299.1175pt>
+<images/dhbw.png, id=7, 710.655pt x 299.1175pt>
 File: images/dhbw.png Graphic file (type png)
 <use images/dhbw.png>
 Package pdftex.def Info: images/dhbw.png  used on input line 6.
 (pdftex.def)             Requested size: 168.99919pt x 71.13188pt.
-
-Overfull \hbox (15.35449pt too wide) in paragraph at lines 6--7
-[]|[]| 
- []
-
-[1
+ [1
 
 \openout5 = `dokumentation.ist'.
 
 
-{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/firma-deckblatt.png> <./images/dhbw.png>]) (./ads/sperrvermerk.tex
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 5.
+{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/dhbw.png>])
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 58.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1407,69 +1397,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [1] (./ads/erklaerung.tex) [2] (./ads/abstract.tex
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 37.
- (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 37.
+Package tocbasic Info: character protrusion at toc deactivated on input line 58.
+ (./dokumentation.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 37.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 37.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 8.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 37.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 8.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 37.
+(Font)              <12> on input line 8.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 37.
+(Font)              <8> on input line 8.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 37.
-
-Overfull \hbox (14.37169pt too wide) in paragraph at lines 37--37
-\T1/lmr/m/n/12 (-20) Abstract nor-ma-ler-wei-se auf Eng-lisch. Sie-he: [][]$\T1/lmtt/m/n/12 http : / / www . dhbw . de / fileadmin / user / public /
- []
-
-
-Overfull \hbox (34.43356pt too wide) in paragraph at lines 37--37
-\T1/lmtt/m/n/12 Dokumente / Portal / Richtlinien _ Praxismodule _ Studien _ und _ Bachelorarbeiten _ JG2011ff .
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 37.
-(c:/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (46.0634pt too wide) in paragraph at lines 37--37
-\T1/lmr/m/n/12 (-20) Quelle: [][]$\T1/lmtt/m/n/12 http : / / www . ib . dhbw-[]mannheim . de / fileadmin / ms / bwl-[]ib / Downloads _ alt / Leitfaden _
- []
-
-[3
-
-])
-Package tocbasic Info: character protrusion at toc deactivated on input line 58.
- (./dokumentation.toc
-Overfull \hbox (3.22041pt too wide) detected at line 5
- [][][]\T1/lmss/bx/n/12 VIII[][]
- []
-
+(Font)              <6> on input line 8.
 )
 \tf@toc=\write7
 \openout7 = `dokumentation.toc'.
 
- [4
+ [1
 
 ] (./ads/acronyms.tex
 chapter without number
@@ -1488,7 +1444,7 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface.
 
-) [5
+) [2
 
 
 
@@ -1498,7 +1454,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 70.
 \tf@lof=\write8
 \openout8 = `dokumentation.lof'.
 
- [6
+ [3
 
 
 ]
@@ -1507,7 +1463,7 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 74.
 \tf@lot=\write9
 \openout9 = `dokumentation.lot'.
 
- [7
+ [4
 
 
 ]
@@ -1529,7 +1485,7 @@ chapter without number
 \tf@lol=\write10
 \openout10 = `dokumentation.lol'.
 
- [8
+ [5
 
 
 ] (./content/01kapitel.tex
@@ -1545,7 +1501,15 @@ l.3 \chapter
 ]
 chapter 2.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 9.
-[2
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9.
+(c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [2
 
 ]
 Package acronym Info: Label `acro:AGPL' newly defined as it shall be overridden
@@ -1586,18 +1550,18 @@ Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46028 strings out of 475075
- 881546 string characters out of 5783001
- 2013069 words of memory out of 5000000
- 66345 multiletter control sequences out of 15000+600000
- 540301 words of font info for 115 fonts, out of 8000000 for 9000
+ 45943 strings out of 475075
+ 879798 string characters out of 5783001
+ 2012701 words of memory out of 5000000
+ 66294 multiletter control sequences out of 15000+600000
+ 539194 words of font info for 106 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  113i,10n,109p,10708b,2457s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on dokumentation.pdf (15 pages, 331597 bytes).
+{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on dokumentation.pdf (12 pages, 288736 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 44135 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 42082 words of extra memory for PDF output out of 42996 (max. 10000000)
 
