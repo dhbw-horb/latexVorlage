@@ -1,9 +1,65 @@
-[4] Config.pm:306> INFO - This is Biber 2.18
-[5] Config.pm:309> INFO - Logfile is 'dokumentation.blg'
-[1605] biber-MSWIN32:340> INFO - === 
-[2117] Biber.pm:418> INFO - Reading 'dokumentation.bcf'
-[3780] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
-[4007] bbl.pm:654> INFO - Writing 'dokumentation.bbl' with encoding 'UTF-8'
-[4009] bbl.pm:757> INFO - Output to dokumentation.bbl
-[4013] Biber.pm:130> WARN - The file 'dokumentation.bcf' does not contain any citations!
-[4014] Biber.pm:132> INFO - WARNINGS: 1
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: dokumentation.aux
+The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: dokumentation-blx.bib
+Database file #2: bibliographie.bib
+Biblatex version: 3.18
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 6 entries,
+            6399 wiz_defined-function locations,
+            1256 strings with 12391 characters,
+and the built_in function-call counts, 38615 in all, are:
+= -- 2953
+> -- 669
+< -- 227
++ -- 1138
+- -- 223
+* -- 2494
+:= -- 4257
+add.period$ -- 0
+call.type$ -- 6
+change.case$ -- 143
+chr.to.int$ -- 42
+cite$ -- 10
+duplicate$ -- 4263
+empty$ -- 3286
+format.name$ -- 337
+if$ -- 7920
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 0
+newline$ -- 214
+num.names$ -- 321
+pop$ -- 1804
+preamble$ -- 1
+purify$ -- 166
+quote$ -- 0
+skip$ -- 1229
+stack$ -- 0
+substring$ -- 4837
+swap$ -- 906
+text.length$ -- 163
+text.prefix$ -- 5
+top$ -- 1
+type$ -- 191
+warning$ -- 0
+while$ -- 581
+width$ -- 0
+write$ -- 209
