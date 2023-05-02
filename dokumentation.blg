@@ -1,9 +1,9 @@
-[0] Config.pm:306> INFO - This is Biber 2.18
-[0] Config.pm:309> INFO - Logfile is 'dokumentation.blg'
-[246] biber-MSWIN32:340> INFO - === 
-[319] Biber.pm:418> INFO - Reading 'dokumentation.bcf'
-[803] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
-[866] bbl.pm:654> INFO - Writing 'dokumentation.bbl' with encoding 'UTF-8'
-[867] bbl.pm:757> INFO - Output to dokumentation.bbl
-[869] Biber.pm:130> WARN - The file 'dokumentation.bcf' does not contain any citations!
-[870] Biber.pm:132> INFO - WARNINGS: 1
+[4] Config.pm:306> INFO - This is Biber 2.18
+[5] Config.pm:309> INFO - Logfile is 'dokumentation.blg'
+[1605] biber-MSWIN32:340> INFO - === 
+[2117] Biber.pm:418> INFO - Reading 'dokumentation.bcf'
+[3780] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
+[4007] bbl.pm:654> INFO - Writing 'dokumentation.bbl' with encoding 'UTF-8'
+[4009] bbl.pm:757> INFO - Output to dokumentation.bbl
+[4013] Biber.pm:130> WARN - The file 'dokumentation.bcf' does not contain any citations!
+[4014] Biber.pm:132> INFO - WARNINGS: 1
