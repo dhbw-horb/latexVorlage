@@ -8,3 +8,4 @@ dokumentation.pdf
 *.bak
 *.orig
 *compile.log
+dokumentation*

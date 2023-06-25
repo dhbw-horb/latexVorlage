@@ -1,47 +1,48 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  2 MAY 2023 11:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.28)  28 MAY 2023 22:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/10_Daten/21_Studium(Daten)/Semester04/DiskreteMathematik-RucksackproblemLaTex/ads/header.tex
-(d:/10_Daten/21_Studium(Daten)/Semester04/DiskreteMathematik-RucksackproblemLaTex/ads/header.tex
-LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-08-30> (c:/texlive/2022/texmf-dist/tex/latex/nag/nag.sty
+**c:/Users/alwin/VSCode_projects/LaTeX/DiskreteMathematik-RucksackproblemLaTex/ads/header.tex
+(c:/Users/alwin/VSCode_projects/LaTeX/DiskreteMathematik-RucksackproblemLaTex/ads/header.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-03-30> (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/nag\nag.sty
 Package: nag 2011/11/25 0.7 warning about old commands (ulmi)
 \c@nag@c=\count185
 \c@nag@sins=\count186
 Package nag Info: Loaded nag-l2tabu.cfg  on input line 552.
- (c:/texlive/2022/texmf-dist/tex/latex/nag/nag-l2tabu.cfg
+ (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/nag\nag-l2tabu.cfg
 File: nag-l2tabu.cfg 2010/05/17 v2.11 l2tabu rules for nag.sty (ulmi)
 )
 Package nag Info: Loaded nag-orthodox.cfg  on input line 552.
- (c:/texlive/2022/texmf-dist/tex/latex/nag/nag-orthodox.cfg
+ (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/nag\nag-orthodox.cfg
 File: nag-orthodox.cfg 2006/04/19 v1.8 strict rules for nag.sty (ulmi)
-)) (c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrreprt.cls
-Document Class: scrreprt 2022/07/04 v3.37 KOMA-Script document class (report)
-(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2022/07/04 v3.37 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
- (c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2022/07/04 v3.37 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
- (c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2022/07/04 v3.37 KOMA-Script package (file load hooks)
- (c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2022/07/04 v3.37 KOMA-Script package (using LaTeX hooks)
- (c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrlogo.sty
-Package: scrlogo 2022/07/04 v3.37 KOMA-Script package (logo)
-))) (c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+)) (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrreprt.cls
+Document Class: scrreprt 2023/04/24 v3.40 KOMA-Script document class (report)
+(C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase.sty
+Package: scrkbase 2023/04/24 v3.40 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+Package: scrbase 2023/04/24 v3.40 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.sty
+Package: scrlfile 2023/04/24 v3.40 KOMA-Script package (file load hooks)
+ (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-hook.sty
+Package: scrlfile-hook 2023/04/24 v3.40 KOMA-Script package (using LaTeX hooks)
+ (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
+Package: scrlogo 2023/04/24 v3.40 KOMA-Script package (logo)
+))) (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
-)) (c:/texlive/2022/texmf-dist/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2022/07/04 v3.37 KOMA-Script package (handling toc-files)
-\scr@dte@tocline@numberwidth=\skip47
+)) (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\tocbasic.sty
+Package: tocbasic 2023/04/24 v3.40 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip48
 \scr@dte@tocline@numbox=\box51
 )
-Package tocbasic Info: babel extension for `toc' omitted
-(tocbasic)             because of missing \bbl@set@language on input line 137.
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 135.
 Class scrreprt Info: You've used standard option `oneside'.
 (scrreprt)           This is correct!
 (scrreprt)           Internally I'm using `twoside=false'.
@@ -89,12 +90,12 @@ Class scrreprt Warning: deprecated option `enabledeprecatedfontcommands'.
 (scrreprt)              longer. Therefore usage of this class option also
 (scrreprt)              is not recommended.
 
-Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input line 2566.
-(c:/texlive/2022/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
-File: scrsize12pt.clo 2022/07/04 v3.37 KOMA-Script font size class option (12pt)
-) (c:/texlive/2022/texmf-dist/tex/latex/koma-script/typearea.sty
-Package: typearea 2022/07/04 v3.37 KOMA-Script package (type area)
-\ta@bcor=\skip48
+Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input line 2668.
+(C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrsize12pt.clo
+File: scrsize12pt.clo 2023/04/24 v3.40 KOMA-Script font size class option (12pt)
+) (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\typearea.sty
+Package: typearea 2023/04/24 v3.40 KOMA-Script package (type area)
+\ta@bcor=\skip49
 \ta@div=\count187
 Package typearea Info: You've used standard option `pdftex'.
 (typearea)             This is correct!
@@ -108,10 +109,10 @@ Package typearea Info: You've used standard option `oneside'.
 (typearea)             If you'd like to set the option with \KOMAoptions,
 (typearea)             you'd have to use `twoside=false' there
 (typearea)             instead of `oneside', too.
-\ta@hblk=\skip49
-\ta@vblk=\skip50
-\ta@temp=\skip51
-\footheight=\skip52
+\ta@hblk=\skip50
+\ta@vblk=\skip51
+\ta@temp=\skip52
+\footheight=\skip53
 
 DIV calculation for typearea with good linewidth.
 Package typearea Info: These are the values describing the layout:
@@ -130,7 +131,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 48.625pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1766.
+(typearea)              on input line 1798.
 )
 \c@part=\count188
 \c@chapter=\count189
@@ -139,62 +140,64 @@ Package typearea Info: These are the values describing the layout:
 \c@subsubsection=\count192
 \c@paragraph=\count193
 \c@subparagraph=\count194
-\scr@dte@chapter@maxnumwidth=\skip53
+\scr@dte@chapter@maxnumwidth=\skip54
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\chapter on input line 5805.
-\scr@dte@section@maxnumwidth=\skip54
+(scrreprt)           for `\chapter on input line 5961.
+\scr@dte@section@maxnumwidth=\skip55
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\section on input line 5816.
+(scrreprt)           for `\section on input line 5972.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\section on input line 5816.
-\scr@dte@part@maxnumwidth=\skip55
+(scrreprt)           for `\section on input line 5972.
+\scr@dte@part@maxnumwidth=\skip56
 Class scrreprt Info: using compatibility default `afterindent=true'
-(scrreprt)           for `\part on input line 5825.
-\scr@dte@subsection@maxnumwidth=\skip56
+(scrreprt)           for `\part on input line 5981.
+\scr@dte@subsection@maxnumwidth=\skip57
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsection on input line 5835.
+(scrreprt)           for `\subsection on input line 5991.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsection on input line 5835.
-\scr@dte@subsubsection@maxnumwidth=\skip57
+(scrreprt)           for `\subsection on input line 5991.
+\scr@dte@subsubsection@maxnumwidth=\skip58
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsubsection on input line 5845.
+(scrreprt)           for `\subsubsection on input line 6001.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsubsection on input line 5845.
-\scr@dte@paragraph@maxnumwidth=\skip58
+(scrreprt)           for `\subsubsection on input line 6001.
+\scr@dte@paragraph@maxnumwidth=\skip59
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\paragraph on input line 5856.
+(scrreprt)           for `\paragraph on input line 6012.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\paragraph on input line 5856.
-\scr@dte@subparagraph@maxnumwidth=\skip59
+(scrreprt)           for `\paragraph on input line 6012.
+\scr@dte@subparagraph@maxnumwidth=\skip60
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subparagraph on input line 5866.
+(scrreprt)           for `\subparagraph on input line 6022.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subparagraph on input line 5866.
-\abovecaptionskip=\skip60
-\belowcaptionskip=\skip61
+(scrreprt)           for `\subparagraph on input line 6022.
+\abovecaptionskip=\skip61
+\belowcaptionskip=\skip62
 \c@pti@nb@sid@b@x=\box52
-Package tocbasic Info: babel extension for `lof' omitted
-(tocbasic)             because of missing \bbl@set@language on input line 7031.
-\scr@dte@figure@maxnumwidth=\skip62
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 7199.
+\scr@dte@figure@maxnumwidth=\skip63
 \c@figure=\count195
-Package tocbasic Info: babel extension for `lot' omitted
-(tocbasic)             because of missing \bbl@set@language on input line 7048.
-\scr@dte@table@maxnumwidth=\skip63
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 7216.
+\scr@dte@table@maxnumwidth=\skip64
 \c@table=\count196
 Class scrreprt Info: Using old \@makefntext due to compatibility level
-(scrreprt)           less than 3.22 on input line 7206.
-Class scrreprt Info: Redefining `\numberline' on input line 7219.
-\bibindent=\dimen138
-) (c:/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty (c:/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex
+(scrreprt)           less than 3.22 on input line 7374.
+Class scrreprt Info: Redefining `\numberline' on input line 7387.
+\bibindent=\dimen140
+) (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
 \integerpart=\count197
 \decimalpart=\count198
 )
-Package: xstring 2021/07/21 v1.84 String manipulations (CT)
-) (c:/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
+Package: xstring 2023/01/14 v1.85 String manipulations (CT)
+) (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-) (c:/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+) (C:\Users\alwin\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 
@@ -204,7 +207,7 @@ Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: tex)
 
 Enter file name: 
-d:/10_Daten/21_Studium(Daten)/Semester04/DiskreteMathematik-RucksackproblemLaTex/ads/header.tex:40: Emergency stop.
+c:/Users/alwin/VSCode_projects/LaTeX/DiskreteMathematik-RucksackproblemLaTex/ads/header.tex:40: Emergency stop.
 <read *> 
          
 l.40 \input{ads/einstellungen_liste}
@@ -213,11 +216,11 @@ l.40 \input{ads/einstellungen_liste}
 
  
 Here is how much of TeX's memory you used:
- 3916 strings out of 475075
- 85136 string characters out of 5783001
- 585134 words of memory out of 5000000
- 25354 multiletter control sequences out of 15000+600000
- 470321 words of font info for 30 fonts, out of 8000000 for 9000
+ 3957 strings out of 476331
+ 86823 string characters out of 5787765
+ 1852660 words of memory out of 5000000
+ 24434 multiletter control sequences out of 15000+600000
+ 513349 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,1n,106p,10686b,271s stack positions out of 10000i,1000n,20000p,200000b,200000s
-d:/10_Daten/21_Studium(Daten)/Semester04/DiskreteMathematik-RucksackproblemLaTex/ads/header.tex:40:  ==> Fatal error occurred, no output PDF file produced!
+ 108i,1n,106p,10982b,271s stack positions out of 10000i,1000n,20000p,200000b,200000s
+c:/Users/alwin/VSCode_projects/LaTeX/DiskreteMathematik-RucksackproblemLaTex/ads/header.tex:40:  ==> Fatal error occurred, no output PDF file produced!

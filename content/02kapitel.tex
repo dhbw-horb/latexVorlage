@@ -1,43 +1,204 @@
 %!TEX root = ../dokumentation.tex
 
-\chapter{Beispiel Code-schnipsel einbinden}
+\chapter{Algorithmen die das Rucksackproblem lösen}
+Algorithmen, die das Rucksackproblem lösen können in zwei Kategorien 
+eingeteilt werden: Algorithmen, die immer die Optimale Lösung finden, 
+dafür aber eine inakzeptable Zeitkomplexität haben, 
+oder Algorithmen mit geringerer Zeitkomplexitätsklasse, die 
+aber nicht für eine Optimale Lösung garantieren.
 
-%title wird unter dem Bsp. abgedruckt
-%caption wird im Verzeichnis abgedruckt
-%label wird zum referenzieren benutzt, muss einzigartig sein.
+\section{Algorithmen mit Suchbaum}
+\subsection{Brute-Force Algorithmus}
+Die Lösung des Rucksackproblems mithilfe des 
+Brute-Force-Algorithmus ist eine naive, aber grundlegende 
+Methode, um die optimale Lösung zu finden. Dieser Ansatz 
+basiert auf der systematischen Überprüfung aller möglichen 
+Kombinationen von Gegenständen, um diejenige zu finden, die 
+den größtmöglichen Wert bei Einhaltung der Kapazitätsgrenze 
+des Rucksacks bietet.
 
-\begin{lstlisting}[caption=Code-Beispiel, label=Bsp.1]
-public class HelloWorld {
-	public static void main (String[] args) {
-		// Ausgabe Hello World!
-		System.out.println("Hello World!");
-	}
-}
-\end{lstlisting}
+Um den Brute-Force-Algorithmus mathematisch zu beschreiben, 
+müssen zuerst die Eingabeparameters des Problems beachtet werden. Sei 
+$N$ die Gesamtanzahl der verfügbaren Gegenstände. Jeder 
+Gegenstand $i$ hat einen bestimmten Wert $v_i$ und ein Gewicht $wi$. 
+Der Rucksack hat eine maximale Kapazität $W$.
 
-%language ändert die Sprache. (Wenn nur eine Sprache verwendet wird, kann diese Sprache in einstellungen.tex geändert werden. Standardmäßig Java.)
-\begin{lstlisting}[caption=Python-Code, label=Python-Code, title=Titel des Python-Codes,language=Python]
-def quicksort(liste):
-if len(liste) <= 1:
-	return liste
-pivotelement = liste.pop()
-links = [element for element in liste if element < pivotelement]
-rechts = [element for element in liste if element >= pivotelement]
-return quicksort(links) + [pivotelement] + quicksort(rechts)
-# Quelle: http://de.wikipedia.org/wiki/Python_(Programmiersprache)
-\end{lstlisting}
+Der Brute-Force-Algorithmus durchläuft nun alle $2^N$ möglichen 
+Kombinationen der Entscheidungsvariablen $x_i$. Für jede 
+Kombination wird das Gewicht überprüft, um sicherzustellen, 
+dass die Kapazitätsgrenze des Rucksacks eingehalten wird. 
+Wenn dies der Fall ist, wird der Wert dieser Kombination 
+berechnet und mit dem bisher besten Wert verglichen. Der 
+Brute-Force-Algorithmus speichert die beste Kombination von 
+Gegenständen, die den höchsten Wert erzielt.
 
-\section{lorem ipsum}
-Looking for the one superhero comic you just have to read. Following the antics and adventures of May Mayday Parker, this Spider-book has everything you could want in a comic--action, laughs, mystery and someone in a Spidey suit. Collects Alias \#1-28, What If. Jessica Jones had Joined the Avengers. In her inaugural arc, Jessicas life immediately becomes expendable when she uncovers the potentially explosive secret of one heros true identity. 
+Die Laufzeitkomplexität des Brute-Force-Algorithmus beträgt 
+$O(2^N)$, da der Algorithmus alle möglichen Kombinationen der 
+Gegenstände durchläuft. Diese exponentielle Komplexität 
+macht den Brute-Force-Algorithmus für große $N$ unpraktikabel.
 
-Once upon a time, Jessica Jones was a costumed super-hero, just not a very good one. First, a story where Wolverine and Hulk come together, and then Captain America and Cable meet up. In a city of Marvels, Jessica Jones never found her niche. The classic adventures of Spider-Man from the early days up until the 90s. Looking for the one superhero comic you just have to read.
+Trotz seiner ineffizienten Laufzeit hat der 
+Brute-Force-Algorithmus einige Vorteile. Er liefert immer die 
+optimale Lösung, da er alle möglichen Kombinationen überprüft.
+\subsection{Branch-Bound Algorithmus}
+Branch-and-Bound ist ein bekannter Algorithmus zur Lösung 
+des Rucksackproblems, der auf dem Konzept des Durchsuchens 
+eines Suchbaums basiert. In diesem Ansatz werden verschiedene 
+Teilräume des Lösungsraums explizit betrachtet und systematisch 
+erkundet, um eine optimale Lösung zu finden. Der Algorithmus 
+verwendet eine Kombination von Schätzungen und Grenzwerten, 
+um den Suchraum effizient zu durchsuchen und unproduktive 
+Teilräume abzuschneiden.
 
-Meet all of Spideys deadly enemies, from the Green Goblin and Doctor Octopus to Venom and Carnage, plus see Peter Parker fall in love, face tragedy and triumph, and learn that with great power comes great responsibility. In a city of Marvels, Jessica Jones never found her niche. Bitten by a radioactive spider, high school student Peter Parker gained the speed, strength and powers of a spider. Looking for the one superhero comic you just have to read. What do you get when you ask the question, What if Spider-Man had a daughter.
+Um den Branch-and-Bound-Algorithmus mathematisch zu 
+beschreiben, betrachten wir zuerst das Rucksackproblem 
+formal. Gegeben sei eine Menge von n Gegenständen, wobei 
+jeder Gegenstand einen Wert $v_i$ und ein Gewicht $w_i$ hat. 
+Der Rucksack hat eine begrenzte Kapazität W. Das Ziel 
+besteht darin, eine Teilmenge der Gegenstände auszuwählen, 
+um den Rucksack zu füllen und den Gesamtwert der ausgewählten 
+Gegenstände zu maximieren, ohne das Gewichtslimit zu 
+überschreiten.
 
-The classic adventures of Spider-Man from the early days up until the 90s. Amazing Spider-Man is the cornerstone of the Marvel Universe. But will each partner’s combined strength be enough. Adopting the name Spider-Man, Peter hoped to start a career using his new abilities. Youve found it.
+Wir definieren die Entscheidungsvariable $x_i$ für jeden 
+Gegenstand $i$. Wenn Gegenstand $i$ ausgewählt wird, ist $x_i$ 
+gleich 1, andernfalls ist $x_i$ gleich 0. Darüber hinaus 
+verwenden wir die Funktion $f(x)$ zur Berechnung des 
+Gesamtwerts einer Teilmenge von Gegenständen $x$ und die 
+Funktion $g(x)$ zur Berechnung des Gesamtgewichts einer 
+Teilmenge von Gegenständen x.
 
-\section{Verweis auf Code}
-Verweis auf den Code \autoref{Bsp.1}.\\
-und der Python-Code \autoref{Python-Code}.
+Der Branch-and-Bound-Algorithmus beginnt mit einer 
+Anfangslösung, die keinen Gegenstand enthält 
+$(x = {0, 0, \cdots, 0})$. Anschließend wird ein Suchbaum 
+aufgebaut, der alle möglichen Teilräume des Lösungsraums 
+repräsentiert. Jeder Knoten im Suchbaum entspricht einer 
+Teilmenge von Gegenständen. Der Algorithmus durchläuft den 
+Suchbaum rekursiv, indem er Teilräume basierend auf 
+Schätzungen und Grenzwerten erzeugt und abschneidet.
 
-Zweite Erwähnung einer Abkürzung \ac{AGPL} (Erlärung wird nicht mehr angezeigt)
+Die Schätzungsfunktion $E(xs)$ wird verwendet, um eine obere 
+Schranke für den Wert einer Teilmenge von Gegenständen x zu 
+berechnen. Diese Schätzung basiert auf einer Relaxation des 
+Rucksackproblems, bei der angenommen wird, dass beliebige 
+Bruchteile von Gegenständen ausgewählt werden können. Eine 
+mögliche Schätzungsfunktion ist:
+
+\begin{equation}
+    E(x) = f(x) + (W - g(x)) \cdot \left(\frac{v_{i+1}}{w_{i+1}}\right)
+\end{equation}
+
+wobei $i$ der Index des nächsten Gegenstands ist, der nicht 
+in $x$ enthalten ist. Diese Schätzung beruht auf der Annahme, 
+dass der nächste Gegenstand mit dem höchsten Verhältnis von 
+Wert zu Gewicht ausgewählt wird, um die verbleibende 
+Kapazität optimal auszunutzen.
+
+Basierend auf der Schätzungsfunktion wird ein Grenzwert 
+(bound) für den aktuellen Teilraum berechnet. Der Grenzwert 
+$B(x)$ wird definiert als der maximale Wert, der in einem 
+Teilraum von Gegenständen x erreicht werden kann, ohne das 
+Gewichtslimit zu überschreiten. Der Grenzwert wird rekursiv 
+berechnet
+
+\section{Greedy-Algorithmus}
+Der Greedy-Algorithmus zur Lösung des Rucksackproblems besteht 
+aus fünf Schritten:
+
+Schritt 1: Berechne das Verhältnis von Wert zu Gewicht für 
+jeden Gegenstand.
+Verhältnis \[r_i = \frac{v_i}{w_i}\]
+
+Schritt 2: Sortiere die Gegenstände absteigend nach ihrem 
+Verhältnis von Wert zu Gewicht.
+\[r_1 \geq r_2 \geq \cdots \geq r_n\]
+
+Schritt 3: Initialisiere den Rucksack und den Gesamtwert.
+\[   \text{rucksack} = \{\}; \\
+    \text{wert} = 0 \]
+Schritt 4: Durchlaufe die sortierte Liste der Gegenstände.\\
+Für $i = 1$ bis $n$: 
+Wenn das Hinzufügen des Gegenstands $i$ zum Rucksack den 
+verbleibenden Platz im Rucksack nicht überschreitet:
+Füge den Gegenstand $i$ zum Rucksack hinzu.
+Aktualisiere den verbleibenden Platz im Rucksack.
+Erhöhe den Gesamtwert um den Wert des Gegenstands $i$.
+
+Schritt 5: \\Gib den Rucksack und den Gesamtwert als Ergebnis 
+aus.
+
+Der Greedy-Algorithmus basiert auf der Annahme, dass es 
+immer optimal ist, den Gegenstand mit dem höchsten Verhältnis 
+von Wert zu Gewicht zu wählen. Diese Annahme kann bei dem Rucksackproblem
+keine optimale Lösung Garantieren.
+
+Um dies zu beweisen, betrachten wir ein einfaches Beispiel: 
+Gegeben seien drei Gegenstände mit den Werten $v = \{60, 100, 120\}$ 
+und den Gewichten $w =\{10, 20, 30\}$. Der Rucksack hat eine Kapazität 
+von $W = 50$. Der Greedy-Algorithmus würde den Gegenstand 1 mit 
+dem höchsten Verhältnis von Wert zu Gewicht auswählen. Die Optimale 
+Lösung lässt Gegenstand 1 aus dem Rucksack und nimmt nur Gegenstand 2 und 3.
+Damit ist gezeigt, dass der Greedy-Ansatz nicht für eine optimale Lösung 
+garantieren kann.
+
+Die Zeitkomplexität des Greedy-Algorithmus zur Lösung des 
+Rucksackproblems ist $O(nlog(n))$, 
+wobei $n$ die Anzahl der Gegenstände darstellt. Dabei nimmt das 
+sortieren der Liste der Gegenstände die meiste Zeit ein, bzw.\ hat 
+die Höchste Zeitkomplexität, weil das Sortieren einer Liste 
+keine geringere Zeitkomplexität als $(nlog(n))$ haben kann 
+\todo{citation needed}. Der Rest des Greedy"=Algorithmus hat eine 
+Laufzeit von $O(n)$.\ \cite[vgl.]{cormen2022introduction}
+
+\section{Dynamische Programmierung}
+Die dynamische Programmierung ist eine effiziente Methode zur 
+Lösung des Rucksackproblems, bei der das Problem in kleinere 
+Teilprobleme aufgeteilt wird und die Lösungen der Teilprobleme 
+abgespeichert werden, um mögliche Überlappungen zu vermeiden, falls 
+diese Teilprobleme erneut berechnet werden müssten.
+
+Um das Rucksackproblem mit dynamischer Programmierung zu 
+lösen, müssen zuerst die Teilprobleme betrachtet werden. Sei $n$ die 
+Anzahl der verfügbaren Gegenstände und $M$ die Kapazität des 
+Rucksacks. Wir definieren eine Tabelle $dp$, die die maximale 
+Gesamtwertsumme für jede Teilmenge der Gegenstände und jede 
+mögliche Kapazität des Rucksacks speichert. Die Einträge in 
+der Tabelle werden durch $dp[i][j]$ repräsentiert, wobei $i$ den 
+Index des aktuellen Gegenstands und $j$ die aktuelle Kapazität 
+des Rucksacks darstellt.
+
+Um den Wert in $dp[i][j]$ zu berechnen, betrachtet der Algorithmus 
+zwei Möglichkeiten: entweder der $i$-te Gegenstand wird in den 
+Rucksack aufgenommen oder nicht. Wenn der $i$-te Gegenstand 
+nicht aufgenommen wird, bleibt der Wert $dp[i][j]$ gleich 
+$dp[i-1][j]$. Falls der $i$-te Gegenstand aufgenommen wird, wird 
+der Gesamtwert um den Wert des $i$-ten Gegenstands erhöht, und 
+die verbleibende Kapazität des Rucksacks wird um das Gewicht 
+des $i$-ten Gegenstands reduziert. Der Wert $dp[i][j]$ wird dann 
+zu $dp[i-1][j-w[i]] + v[i]$, wobei $w[i]$ das Gewicht und $v[i]$ 
+der Wert des $i$-ten Gegenstands ist.
+
+Der Basisfall der dynamischen Programmierung tritt ein, wenn 
+entweder $i \le 0$ oder $j = 0$ ist. $i \le 0$ referenziert einen 
+Gegenstand ausserhalb der Liste, weshalb $dp[0][j]$ für alle j gleich 0 ist. 
+Der Fall $j = 0$ bedeutet, 
+dass der Rucksack keine Kapazität mehr hat und $dp[i][0]$ 
+für alle $i$ gleich $0$ ist.
+
+Der rekursive Zusammenhang der dynamischen Programmierung 
+kann durch folgende Formel ausgedrückt werden:
+
+\begin{equation}
+    \text{dp}[i][j] = \begin{cases}
+        \max(\text{dp}[i-1][j], \text{dp}[i-1][j-w[i]] + v[i]), & \text{wenn } j \geq w[i] \\
+        \text{dp}[i-1][j], & \text{wenn } j < w[i]
+    \end{cases}
+\end{equation}
+
+
+Der Wert in $dp[n][M]$ gibt die maximale Gesamtwertsumme an und 
+repräsentiert somit die optimale Lösung des Rucksackproblems.
+
+Die Laufzeit dieses Algorithmus beträgt $O(nM)$, da 
+eine Tabelle der Größe $(n+1) × (M+1)$ erstellt wird und 
+jeder Eintrag der Tabelle in konstanter Zeit berechnet wird.\ \cite[vgl.]{Martello1987}
