@@ -41,32 +41,13 @@ Trotz seiner ineffizienten Laufzeit hat der
 Brute-Force-Algorithmus einige Vorteile. Er liefert immer die 
 optimale Lösung, da er alle möglichen Kombinationen überprüft.
 \subsection{Branch-Bound Algorithmus}
-Branch-and-Bound ist ein bekannter Algorithmus zur Lösung 
-des Rucksackproblems, der auf dem Konzept des Durchsuchens 
-eines Suchbaums basiert. In diesem Ansatz werden verschiedene 
-Teilräume des Lösungsraums explizit betrachtet und systematisch 
-erkundet, um eine optimale Lösung zu finden. Der Algorithmus 
-verwendet eine Kombination von Schätzungen und Grenzwerten, 
-um den Suchraum effizient zu durchsuchen und unproduktive 
-Teilräume abzuschneiden.
-
-Um den Branch-and-Bound-Algorithmus mathematisch zu 
-beschreiben, betrachten wir zuerst das Rucksackproblem 
-formal. Gegeben sei eine Menge von n Gegenständen, wobei 
-jeder Gegenstand einen Wert $v_i$ und ein Gewicht $w_i$ hat. 
-Der Rucksack hat eine begrenzte Kapazität W. Das Ziel 
-besteht darin, eine Teilmenge der Gegenstände auszuwählen, 
-um den Rucksack zu füllen und den Gesamtwert der ausgewählten 
-Gegenstände zu maximieren, ohne das Gewichtslimit zu 
-überschreiten.
-
 Wir definieren die Entscheidungsvariable $x_i$ für jeden 
 Gegenstand $i$. Wenn Gegenstand $i$ ausgewählt wird, ist $x_i$ 
-gleich 1, andernfalls ist $x_i$ gleich 0. Darüber hinaus 
+gleich $1$, andernfalls ist $x_i$ gleich $0$. Darüber hinaus 
 verwenden wir die Funktion $f(x)$ zur Berechnung des 
 Gesamtwerts einer Teilmenge von Gegenständen $x$ und die 
 Funktion $g(x)$ zur Berechnung des Gesamtgewichts einer 
-Teilmenge von Gegenständen x.
+Teilmenge von Gegenständen $x$.
 
 Der Branch-and-Bound-Algorithmus beginnt mit einer 
 Anfangslösung, die keinen Gegenstand enthält 
@@ -98,9 +79,39 @@ Basierend auf der Schätzungsfunktion wird ein Grenzwert
 (bound) für den aktuellen Teilraum berechnet. Der Grenzwert 
 $B(x)$ wird definiert als der maximale Wert, der in einem 
 Teilraum von Gegenständen x erreicht werden kann, ohne das 
-Gewichtslimit zu überschreiten. Der Grenzwert wird rekursiv 
-berechnet
+Gewichtslimit zu überschreiten. Der Grenzwert $B(x)$ wird 
+rekursiv berechnet, indem alle Teilräume des aktuellen 
+Teilraums betrachtet werden. Wenn ein Teilraum das 
+Gewichtslimit überschreitet, wird der Grenzwert auf den Wert 
+des aktuellen Teilraums gesetzt. Andernfalls wird der 
+Grenzwert als die maximale Summe der Werte aller Gegenstände 
+im Teilraum plus der maximalen Summe der Werte, die aus dem 
+Rest des Rucksacks ausgewählt werden können, berechnet.
 
+Der Branch-and-Bound-Algorithmus verwendet eine Tiefensuche, 
+um den Suchbaum zu durchlaufen. Bei jedem Schritt wird ein 
+Knoten ausgewählt und seine Kinderknoten generiert. Die 
+Kinderknoten entsprechen den Teilräumen, die durch 
+Hinzufügen oder Nicht-Hinzufügen des nächsten Gegenstands 
+entstehen. Die Kinderknoten werden nach ihrem Grenzwert 
+sortiert, und nur die vielversprechendsten Knoten werden 
+weiter erkundet, während unproduktive Knoten abgeschnitten 
+werden.
+
+Der Algorithmus terminiert, wenn alle Knoten des Suchbaums 
+erkundet wurden. Die optimale Lösung ist der Knoten mit dem 
+höchsten Gesamtwert. Der Branch-and-Bound-Algorithmus 
+gewährleistet die Rückgabe einer optimalen Lösung, da er 
+systematisch den Suchraum durchsucht und unproduktive 
+Teilräume abschneidet.
+
+Es ist wichtig anzumerken, dass die Laufzeit des 
+Branch-and-Bound-Algorithmus stark von der Größe des 
+Suchraums abhängt. In einigen Fällen kann der Algorithmus 
+sehr zeitaufwändig sein, insbesondere wenn die Anzahl der 
+Gegenstände groß ist. Daher werden häufig Optimierungen wie 
+Heuristiken und Relaxationen verwendet, um die Laufzeit zu 
+verbessern.\ \cite[vgl.]{Martello1987}
 \section{Greedy-Algorithmus}
 Der Greedy-Algorithmus zur Lösung des Rucksackproblems besteht 
 aus fünf Schritten:
