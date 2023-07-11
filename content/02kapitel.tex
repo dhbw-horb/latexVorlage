@@ -7,40 +7,47 @@ dafür aber eine inakzeptable Zeitkomplexität haben,
 oder Algorithmen mit geringerer Zeitkomplexitätsklasse, die 
 aber nicht für eine Optimale Lösung garantieren.
 
-\section{Algorithmen mit Suchbaum}
-\subsection{Brute-Force Algorithmus}
-Die Lösung des Rucksackproblems mithilfe des 
-Brute-Force-Algorithmus ist eine naive, aber grundlegende 
-Methode, um die optimale Lösung zu finden. Dieser Ansatz 
-basiert auf der systematischen Überprüfung aller möglichen 
-Kombinationen von Gegenständen, um diejenige zu finden, die 
-den größtmöglichen Wert bei Einhaltung der Kapazitätsgrenze 
-des Rucksacks bietet.
-
+\section{Brute-Force Algorithmus}
 Um den Brute-Force-Algorithmus mathematisch zu beschreiben, 
 müssen zuerst die Eingabeparameters des Problems beachtet werden. Sei 
 $N$ die Gesamtanzahl der verfügbaren Gegenstände. Jeder 
 Gegenstand $i$ hat einen bestimmten Wert $v_i$ und ein Gewicht $wi$. 
 Der Rucksack hat eine maximale Kapazität $W$.
 
-Der Brute-Force-Algorithmus durchläuft nun alle $2^N$ möglichen 
-Kombinationen der Entscheidungsvariablen $x_i$. Für jede 
-Kombination wird das Gewicht überprüft, um sicherzustellen, 
-dass die Kapazitätsgrenze des Rucksacks eingehalten wird. 
-Wenn dies der Fall ist, wird der Wert dieser Kombination 
-berechnet und mit dem bisher besten Wert verglichen. Der 
-Brute-Force-Algorithmus speichert die beste Kombination von 
-Gegenständen, die den höchsten Wert erzielt.
+Der Algorithmus lässt sich nun in fünf Schritten beschreiben:
+
+\texttt{Schritt 1}
+Zunächst werden alle möglichen Teilmengen der Liste berechnet. 
+Dies bedeutet, dass jede Kombination von Elementen gebildet 
+wird, was insgesamt $2^n$ mögliche Teilmengen ergibt, wobei $n$ 
+die Anzahl der Elemente in der Liste ist.
+
+\texttt{Schritt 2:}
+Für jede Teilmenge wird die Summe der Gewichte berechnet. 
+Es wird überprüft, ob die Summe das Gewichtslimit nicht 
+überschreitet. Wenn die Summe das Gewichtslimit nicht 
+überschreitet, wird die Teilmenge als gültige Lösung 
+betrachtet. Andernfalls wird sie verworfen.
+
+\texttt{Schritt 3:}
+Schritt 2 wird für jede Teilmenge wiederholt, bis eine 
+Teilmenge gefunden wird, deren Gewicht das Gewichtslimit 
+nicht erhöht.
+
+\texttt{Schritt 4:}
+Die Werte der gültigen Teilmenge(n), die die Bedingung in 
+Schritt 3 erfüllen, werden summiert.
+
+\texttt{Schritt 5:}
+Schließlich wird der höchste Wert aus den gültigen 
+Teilmengen als Antwort auf das Problem ausgewählt.\ \cite[vgl.]{balogun2022explanatory}
 
 Die Laufzeitkomplexität des Brute-Force-Algorithmus beträgt 
-$O(2^N)$, da der Algorithmus alle möglichen Kombinationen der 
+$O(N2^N)$, da der Algorithmus alle möglichen Kombinationen der 
 Gegenstände durchläuft. Diese exponentielle Komplexität 
-macht den Brute-Force-Algorithmus für große $N$ unpraktikabel.
+macht den Brute-Force-Algorithmus für große $N$ unpraktikabel.\ \cite[vlg.]{hristakeva2005different}
 
-Trotz seiner ineffizienten Laufzeit hat der 
-Brute-Force-Algorithmus einige Vorteile. Er liefert immer die 
-optimale Lösung, da er alle möglichen Kombinationen überprüft.
-\subsection{Branch-Bound Algorithmus}
+\section{Branch-Bound Algorithmus}
 Zuerst wird die Entscheidungsvariable $x_i$ für jeden 
 Gegenstand $i$ definiert. Wenn Gegenstand $i$ ausgewählt wird, ist $x_i$ 
 gleich $1$, andernfalls ist $x_i$ gleich $0$. Darüber hinaus 
@@ -79,7 +86,7 @@ Basierend auf der Schätzungsfunktion wird ein Grenzwert
 (bound) für den aktuellen Teilraum berechnet. Der Grenzwert 
 $B(x)$ wird definiert als der maximale Wert, der in einem 
 Teilraum von Gegenständen x erreicht werden kann, ohne das 
-Gewichtslimit zu überschreiten. Der Grenzwert $B(x)$ wird 
+Gewichtslimit zu überschreiten und wird 
 rekursiv berechnet, indem alle Teilräume des aktuellen 
 Teilraums betrachtet werden. Wenn ein Teilraum das 
 Gewichtslimit überschreitet, wird der Grenzwert auf den Wert 
@@ -105,13 +112,12 @@ gewährleistet die Rückgabe einer optimalen Lösung, da er
 systematisch den Suchraum durchsucht und unproduktive 
 Teilräume abschneidet.
 
-Es ist wichtig anzumerken, dass die Laufzeit des 
-Branch-and-Bound-Algorithmus stark von der Größe des 
-Suchraums abhängt. In einigen Fällen kann der Algorithmus 
+Die Laufzeit des 
+Branch-and-Bound-Algorithmus hängt stark von der Größe des 
+Suchraums ab. In einigen Fällen kann der Algorithmus 
 sehr zeitaufwändig sein, insbesondere wenn die Anzahl der 
-Gegenstände groß ist. Daher werden häufig Optimierungen wie 
-Heuristiken und Relaxationen verwendet, um die Laufzeit zu 
-verbessern.\ \cite[vgl.]{Martello1987}
+Gegenstände groß ist.\ \cite[vgl.]{Martello1987}
+
 \section{Greedy-Algorithmus}
 Der Greedy-Algorithmus zur Lösung des Rucksackproblems besteht 
 aus fünf Schritten:
@@ -162,7 +168,7 @@ keine geringere Zeitkomplexität als $(nlog(n))$ haben kann
 Laufzeit von $O(n)$.\ \cite[vgl.]{cormen2022introduction}
 
 \section{Dynamische Programmierung}
-Die dynamische Programmierung ist eine effiziente Methode zur 
+Die dynamische Programmierung ist eine Methode zur 
 Lösung des Rucksackproblems, bei der das Problem in kleinere 
 Teilprobleme aufgeteilt wird und die Lösungen der Teilprobleme 
 abgespeichert werden, um mögliche Überlappungen zu vermeiden, falls 
@@ -171,7 +177,7 @@ diese Teilprobleme erneut berechnet werden müssten.
 Um das Rucksackproblem mit dynamischer Programmierung zu 
 lösen, müssen zuerst die Teilprobleme betrachtet werden. Sei $n$ die 
 Anzahl der verfügbaren Gegenstände und $M$ die Kapazität des 
-Rucksacks. Wir definieren eine Tabelle $dp$, die die maximale 
+Rucksacks. Sei $dp$ eine Tabelle, die die maximale 
 Gesamtwertsumme für jede Teilmenge der Gegenstände und jede 
 mögliche Kapazität des Rucksacks speichert. Die Einträge in 
 der Tabelle werden durch $dp[i][j]$ repräsentiert, wobei $i$ den 
@@ -179,7 +185,7 @@ Index des aktuellen Gegenstands und $j$ die aktuelle Kapazität
 des Rucksacks darstellt.
 
 Um den Wert in $dp[i][j]$ zu berechnen, betrachtet der Algorithmus 
-zwei Möglichkeiten: entweder der $i$-te Gegenstand wird in den 
+zwei Möglichkeiten: Entweder der $i$-te Gegenstand wird in den 
 Rucksack aufgenommen oder nicht. Wenn der $i$-te Gegenstand 
 nicht aufgenommen wird, bleibt der Wert $dp[i][j]$ gleich 
 $dp[i-1][j]$. Falls der $i$-te Gegenstand aufgenommen wird, wird 
@@ -191,7 +197,7 @@ der Wert des $i$-ten Gegenstands ist.
 
 Der Basisfall der dynamischen Programmierung tritt ein, wenn 
 entweder $i \le 0$ oder $j = 0$ ist. $i \le 0$ referenziert einen 
-Gegenstand ausserhalb der Liste, weshalb $dp[0][j]$ für alle j gleich 0 ist. 
+Gegenstand ausserhalb der Liste, weshalb $dp[0][j]$ für alle $j$ gleich $0$ ist. 
 Der Fall $j = 0$ bedeutet, 
 dass der Rucksack keine Kapazität mehr hat und $dp[i][0]$ 
 für alle $i$ gleich $0$ ist.
